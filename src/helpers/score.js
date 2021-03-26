@@ -11,7 +11,7 @@ export const getHitsPerLevel = () => {
   }
 
   achievedCitiesPerLevel.map((element, index) => {
-    hitsPerLevel[index + 1] = element.length;
+    return (hitsPerLevel[index + 1] = element.length);
   });
 
   return hitsPerLevel;

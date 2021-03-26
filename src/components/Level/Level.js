@@ -2,21 +2,21 @@ import React from "react";
 import "./Level.css";
 import { useParams } from "react-router-dom";
 
-import { storeItem, checkItem } from "../../helpers/storage.js";
+// import { storeItem, checkItem } from "../../helpers/storage.js";
 import _ from "lodash";
 
 const Level = () => {
   const params = useParams();
   const images = ["seville", "paris"];
-  const goal = 10;
-  var score = 0;
+  // const goal = 10;
+  // var score = 0;
 
   var cities = localStorage.getItem("cities" + params.level);
   if (cities != null) {
     cities.split("|").forEach((element) => {
       //ESTO NO SIRVE
       //POR CADA CIUDAD QUE APAREZCA EN EL LOCALSTORAGE, DEBERÍAMOS AÑADIRLE SU CARTELITO
-      if (element.trim() != "") {
+      if (element.trim() !== "") {
         _.remove(images, (n) => {
           return n === element;
         });
@@ -64,6 +64,7 @@ const Level = () => {
                         width="500"
                         height="600"
                         class="image hover:opacity-75"
+                        alt={image}
                       />
                       <div
                         id={image + "text"}
@@ -109,6 +110,7 @@ const Level = () => {
                     id="modal-img"
                     src="/img/seville.jpg"
                     class="w-500 h-600 md:w-1000 md:h-1200"
+                    alt="City"
                   />
                 </div>
               </div>

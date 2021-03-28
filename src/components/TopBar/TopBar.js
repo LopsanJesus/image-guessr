@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import "./TopBar.css";
 
 const TopBar = () => {
@@ -15,12 +17,12 @@ const TopBar = () => {
               </div>
             </div>
             <div className="ml-3 relative">
-              <a
-                href="/play"
+              <Link
+                to={"/play"}
                 className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
               >
                 Menu
-              </a>
+              </Link>
             </div>
           </div>
         </div>

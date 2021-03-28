@@ -26,7 +26,10 @@ export const getStoredItem = (store) => {
 };
 
 export const getStoredArray = (store) => {
-  if (localStorage.getItem(store) != null) {
+  if (
+    typeof localStorage.getItem(store) !== "undefined" &&
+    localStorage.getItem(store) !== null
+  ) {
     return localStorage
       .getItem(store)
       .split(",")

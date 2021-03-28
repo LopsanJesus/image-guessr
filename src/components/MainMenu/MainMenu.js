@@ -11,7 +11,7 @@ import _ from "lodash";
 const MainMenu = () => {
   const numberOfLevels = getNumberOfLevels();
   const lastLevelAchieved =
-    getStoredItem("levels") > 0 ? getStoredItem("levels") : 0;
+    getStoredItem("level") > 0 ? getStoredItem("level") : 0;
   const hitsPerLevel = getHitsPerLevel();
 
   return (

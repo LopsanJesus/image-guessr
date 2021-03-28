@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Level.css";
 import { Redirect, useParams } from "react-router-dom";
+import ReactGA from "react-ga";
 
 import { storeItem, checkItem, getStoredArray } from "../../helpers/storage";
 // import _ from "lodash";
@@ -44,6 +45,17 @@ const Level = () => {
     }
   };
 
+  const handleImageClick = (image) => {
+    setGuessingCity(image);
+    setShowModal(true);
+
+    ReactGA.event({
+      category: "Image",
+      action: "Image clicked",
+      label: "Nivel: " + params.level + " - Imagen: " + image,
+    });
+  };
+
   return (
     <div>
       <div class="main">
@@ -84,12 +96,9 @@ const Level = () => {
                             : "hover:opacity-75"
                         }`}
                         alt={image}
-                        onClick={() => {
-                          if (!isStored) {
-                            setGuessingCity(image);
-                            setShowModal(true);
-                          }
-                        }}
+                        onClick={
+                          !isStored ? () => handleImageClick(image) : undefined
+                        }
                       />
                       {isStored && (
                         <div

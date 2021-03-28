@@ -1,4 +1,6 @@
 import React, { useRef, useState } from "react";
+import ReactGA from "react-ga";
+
 import "./GuessModal.css";
 
 import { getCityTranslationsArray } from "../../data/cities";
@@ -7,7 +9,16 @@ const GuessModal = ({ city, addHit, setShowModal }) => {
   const modalInput = useRef(null);
   const [error, setError] = useState(false);
 
+  const trackGuess = () => {
+    ReactGA.event({
+      category: "Image",
+      action: "Image guess",
+      label: "Imagen: " + city + " - user guess: " + modalInput.current.value,
+    });
+  };
+
   const checkGuess = () => {
+    trackGuess();
     if (
       getCityTranslationsArray(city).includes(
         modalInput.current.value.trim().toLowerCase()

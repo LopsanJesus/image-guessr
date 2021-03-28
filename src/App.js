@@ -9,11 +9,13 @@ import MainMenu from "./components/MainMenu";
 import Level from "./components/Level";
 import Home from "./components/Home";
 import NotFound from "./components/NotFound";
+import RouteChangeTracker from "./components/Analytics/ReactChangeTracker";
 
 function App() {
   return (
     <div className="App">
       <Router>
+        <RouteChangeTracker />
         <div className="router">
           <TopBar />
           <div className="content">

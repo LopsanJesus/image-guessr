@@ -11,7 +11,7 @@ const LevelListItem = ({ level, hits, disabled }) => {
           ? "bg-gray-400 opacity-25 cursor-not-allowed"
           : "bg-white hover:bg-blue-600"
       }`}
-      onClick={disabled && ((e) => e.preventDefault())}
+        onClick={disabled ? ((e) => e.preventDefault()) : undefined}
     >
       <p
         className={`flex justify-center font-bold text-3xl mb-1 text-black ${

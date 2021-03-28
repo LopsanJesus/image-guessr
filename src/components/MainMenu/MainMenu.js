@@ -16,12 +16,13 @@ const MainMenu = () => {
 
   return (
     <div>
-      <div class="flex justify-center w-full py-8">
-        <div class="overflow-hidden rounded max-w-md w-full shadow-lg">
+      <div className="flex justify-center w-full py-8">
+        <div className="overflow-hidden rounded max-w-md w-full shadow-lg">
           {numberOfLevels > 0 ? (
             _.times(numberOfLevels, (index) => {
               return (
                 <LevelListItem
+                  key={"levelListItem" + index}
                   level={index + 1}
                   hits={hitsPerLevel[index + 1]}
                   disabled={index + 1 > lastLevelAchieved + 1}
@@ -29,12 +30,12 @@ const MainMenu = () => {
               );
             })
           ) : (
-            <div class="flex justify-center text-black p-8">
+            <div className="flex justify-center text-black p-8">
               No levels were found
             </div>
           )}
 
-          <span class="flex justify-center text-gray-500 font-bold text-xl text-black group-hover:text-white m-6">
+          <span className="flex justify-center text-gray-500 font-bold text-xl text-black group-hover:text-white m-6">
             More levels coming soon...
           </span>
         </div>

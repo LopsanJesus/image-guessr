@@ -58,19 +58,19 @@ const Level = () => {
 
   return (
     <div>
-      <div class="main">
-        <div class="px-4 sm:px-8 lg:px-16 xl:px-20 mx-auto">
-          <div class="hero">
-            <div class="hero-headline flex flex-col items-center justify-center pt-12 pb-8 text-center">
-              <h1 class="font-bold text-5xl text-gray-900 m-5">
+      <div className="main">
+        <div className="px-4 sm:px-8 lg:px-16 xl:px-20 mx-auto">
+          <div className="hero">
+            <div className="hero-headline flex flex-col items-center justify-center pt-12 pb-8 text-center">
+              <h1 className="font-bold text-5xl text-gray-900 m-5">
                 Guess each city!
               </h1>
-              <h1 class="font-bold text-3xl text-gray-900">
+              <h1 className="font-bold text-3xl text-gray-900">
                 Level {params.level} | Score: <span id="score">{score}</span>
               </h1>
               <p
                 id="goal-message"
-                class="font-base text-base text-gray-600 m-5"
+                className="font-base text-base text-gray-600 m-5"
               >
                 Achieve 10 points to unlock level {parseInt(params.level) + 1}.
               </p>
@@ -78,13 +78,16 @@ const Level = () => {
 
             <section
               id="photos"
-              class="my-5 grid grid-cols-1 md:grid-cols-4 gap-4"
+              className="my-5 grid grid-cols-1 md:grid-cols-4 gap-4"
             >
               {images.length > 0 ? (
                 images.map((image) => {
                   let isStored = storedCities.includes(image);
                   return (
-                    <div class="image-container relative inline-block text-center">
+                    <div
+                      key={image}
+                      className="image-container relative inline-block text-center"
+                    >
                       <img
                         id={image}
                         src={"/img/" + image + ".jpg"}
@@ -103,7 +106,7 @@ const Level = () => {
                       {isStored && (
                         <div
                           id={image + "text"}
-                          class="imagetext font-extrabold rounded-xl text-green-500 bg-white p-4 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                          className="imagetext font-extrabold rounded-xl text-green-500 bg-white p-4 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
                         >
                           {image.replaceAll("-", " ").toUpperCase()}
                         </div>
@@ -112,7 +115,7 @@ const Level = () => {
                   );
                 })
               ) : (
-                <div class="flex justify-center text-black p-8">
+                <div className="flex justify-center text-black p-8">
                   No images were found
                 </div>
               )}
@@ -126,6 +129,7 @@ const Level = () => {
           city={guessingCity}
           addHit={addHit}
           setShowModal={setShowModal}
+          level={params.level}
         />
       )}
 

@@ -1,8 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import ReactGA from "react-ga";
+
 import "./AlertModal.css";
 
 const AlertModal = ({ level, setShowModal }) => {
+  const history = useHistory();
+
   return (
     <div id="modal-level">
       <div class="fixed z-10 inset-0 overflow-y-auto">
@@ -38,9 +42,15 @@ const AlertModal = ({ level, setShowModal }) => {
                 class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:ml-3 sm:w-auto sm:text-sm"
                 onClick={() => {
                   setShowModal(false);
+                  ReactGA.event({
+                    category: "Modal new level unlocked",
+                    action: "Navigate to new level",
+                    label: "to -> level " + (parseInt(level) + 1),
+                  });
+                  history.push("/play/level/" + (parseInt(level) + 1));
                 }}
               >
-                <Link to={`/play/level/${parseInt(level) + 1}`}>Go!</Link>
+                Go!
               </button>
               <button
                 id="close-modal-level-button"
@@ -48,6 +58,11 @@ const AlertModal = ({ level, setShowModal }) => {
                 class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
                 onClick={() => {
                   setShowModal(false);
+                  ReactGA.event({
+                    category: "Modal new level unlocked",
+                    action: "finish current level",
+                    label: "to -> level " + parseInt(level),
+                  });
                 }}
               >
                 Let me finish

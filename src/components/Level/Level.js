@@ -11,8 +11,9 @@ import { getLevelCities } from "../../data/cities";
 
 const Level = () => {
   const params = useParams();
+  const [level, setLevel] = useState(params.level);
 
-  var storedCities = getStoredArray("cities" + params.level);
+  var storedCities = getStoredArray("cities" + level);
 
   const goal = 10;
   const [score, setScore] = useState(storedCities.length);
@@ -25,23 +26,20 @@ const Level = () => {
       ? parseInt(localStorage.getItem("level"))
       : 0;
 
-  if (
-    parseInt(params.level) < 1 ||
-    lastLevelAchieved + 1 < parseInt(params.level)
-  )
+  if (parseInt(level) < 1 || lastLevelAchieved + 1 < parseInt(level))
     return <Redirect to="/play" />;
 
-  var images = getLevelCities(params.level);
+  var images = getLevelCities(level);
 
   const addHit = () => {
-    storeItem(guessingCity, "cities" + params.level);
+    storeItem(guessingCity, "cities" + level);
     setScore(score + 1);
     setShowModal(false);
 
-    if (score + 1 >= goal && !checkItem(params.level, "alerts")) {
+    if (score + 1 >= goal && !checkItem(level, "alerts")) {
       setShowAlertModal(true);
-      storeItem(params.level, "alerts");
-      localStorage.setItem("level", params.level);
+      storeItem(level, "alerts");
+      localStorage.setItem("level", level);
     }
   };
 
@@ -52,7 +50,7 @@ const Level = () => {
     ReactGA.event({
       category: "Image",
       action: "Image clicked",
-      label: "Nivel: " + params.level + " - Imagen: " + image,
+      label: "Nivel: " + level + " - Imagen: " + image,
     });
   };
 
@@ -66,13 +64,13 @@ const Level = () => {
                 Guess each city!
               </h1>
               <h1 className="font-bold text-3xl text-gray-900">
-                Level {params.level} | Score: <span id="score">{score}</span>
+                Level {level} | Score: <span id="score">{score}</span>
               </h1>
               <p
                 id="goal-message"
                 className="font-base text-base text-gray-600 m-5"
               >
-                Achieve 10 points to unlock level {parseInt(params.level) + 1}.
+                Achieve 10 points to unlock level {parseInt(level) + 1}.
               </p>
             </div>
 
@@ -129,12 +127,12 @@ const Level = () => {
           city={guessingCity}
           addHit={addHit}
           setShowModal={setShowModal}
-          level={params.level}
+          level={level}
         />
       )}
 
       {showAlertModal && (
-        <AlertModal level={params.level} setShowModal={setShowAlertModal} />
+        <AlertModal level={level} setShowModal={setShowAlertModal} />
       )}
     </div>
   );

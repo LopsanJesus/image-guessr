@@ -1,15 +1,16 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import { resources } from "./translations";
-// the translations
-// (tip move them in a JSON file and import them)
+import languageDetector from "i18next-browser-languagedetector";
 
 i18n
-  .use(initReactI18next) // passes i18n down to react-i18next
+  .use(initReactI18next)
+  .use(languageDetector)
   .init({
     resources,
-    lng: "en",
 
+    supportedLngs: ["en", "es"],
+    fallbackLng: "es",
     keySeparator: false, // we do not use keys in form messages.welcome
 
     interpolation: {

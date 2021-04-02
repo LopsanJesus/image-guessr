@@ -8,10 +8,11 @@ import { storeItem, checkItem, getStoredArray } from "../../helpers/storage";
 import GuessModal from "../GuessModal";
 import AlertModal from "../AlertModal";
 import { getLevelCities } from "../../data/cities";
+import { withTranslation } from "react-i18next";
 
-const Level = () => {
+const Level = ({ t }) => {
   const params = useParams();
-  const [level, setLevel] = useState(params.level);
+  const [level] = useState(params.level);
 
   var storedCities = getStoredArray("cities" + level);
 
@@ -61,7 +62,7 @@ const Level = () => {
           <div className="hero">
             <div className="hero-headline flex flex-col items-center justify-center pt-12 pb-8 text-center">
               <h1 className="font-bold text-5xl text-gray-900 m-5">
-                Guess each city!
+                {t("Guess each city")}
               </h1>
               <h1 className="font-bold text-3xl text-gray-900">
                 Level {level} | Score: <span id="score">{score}</span>
@@ -138,4 +139,4 @@ const Level = () => {
   );
 };
 
-export default Level;
+export default withTranslation()(Level);

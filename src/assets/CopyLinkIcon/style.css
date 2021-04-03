@@ -1,0 +1,25 @@
+.copylink-icon-wrapper {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.copylink-ico {
+  color: white;
+  fill: rgba(31, 41, 55, var(--tw-bg-opacity));
+  width: 40px;
+  height: 40px;
+  padding: 3px;
+  background-color: rgba(31, 41, 55, var(--tw-bg-opacity));
+  border-radius: 50%;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+}
+.whatsapp-ico:hover {
+  box-shadow: 2px 2px 11px rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+}

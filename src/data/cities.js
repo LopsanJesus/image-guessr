@@ -1,87 +1,92 @@
 const cities = [
   [
-    "paris",
-    "seville",
-    "florence",
-    "los-angeles",
-    "tokyo",
-    "nuuk",
-    "rio-de-janeiro",
-    "jerusalem",
-    "barcelona",
-    "rome",
-    "new-york",
-    "beijing",
+    { city: "cordoba", translations: ["cordoba"] },
+    { city: "seville", translations: ["seville", "sevilla"] },
+    { city: "amsterdam", translations: ["amsterdam", "ámsterdam"] },
+    { city: "los-angeles", translations: ["los angeles", "los ángeles", "la"] },
+    { city: "san-francisco", translations: ["san francisco"] },
+    { city: "athens", translations: ["athens", "atenas"] },
+    {
+      city: "rio-de-janeiro",
+      translations: ["rio de janeiro", "río de janeiro", "rio"],
+    },
+    {
+      city: "jerusalem",
+      translations: ["jerusalem", "jerusalén", "jerusalen"],
+    },
+    { city: "barcelona", translations: ["barcelona"] },
+    { city: "santorini", translations: ["santorini"] },
+    { city: "new-york", translations: ["new york", "nueva york"] },
+    { city: "pisa", translations: ["pisa"] },
   ],
   [
-    "toronto",
-    "cairo",
-    "moscow",
-    "saint-petersburg",
-    "london",
-    "granada",
-    "sydney",
-    "havana",
-    "bilbao",
-    "berlin",
-    "venice",
-    "mecca",
+    { city: "rome", translations: ["rome", "roma"] },
+    { city: "florence", translations: ["florence", "florencia", "firenze"] },
+    { city: "moscow", translations: ["moscow", "moscú", "moscu"] },
+    { city: "tokyo", translations: ["tokyo", "tokio"] },
+    { city: "london", translations: ["london", "londres"] },
+    {
+      city: "mexico-city",
+      translations: [
+        "mexico",
+        "ciudad de méxico",
+        "ciudad de mexico",
+        "mexico city",
+      ],
+    },
+    { city: "sydney", translations: ["sydney", "sidney"] },
+    { city: "paris", translations: ["paris", "parís"] },
+    { city: "bilbao", translations: ["bilbao", "bilbo"] },
+    { city: "berlin", translations: ["berlin", "berlín"] },
+    { city: "venice", translations: ["venice", "venecia", "venezia"] },
+    { city: "mecca", translations: ["mecca", "meca", "la meca"] },
+  ],
+  [
+    { city: "cairo", translations: ["el cairo", "cairo"] },
+    { city: "monaco", translations: ["monaco", "mónaco"] },
+    { city: "milan", translations: ["milan", "milán", "milano"] },
+    { city: "petra", translations: ["petra", "ciudad de petra"] },
+    { city: "toronto", translations: ["toronto"] },
+    { city: "madrid", translations: ["madrid"] },
+    { city: "dublin", translations: ["dublin", "dublín"] },
+    { city: "beijing", translations: ["beijing", "pekín", "pekin"] },
+    { city: "washington", translations: ["washington", "washington dc"] },
+    { city: "brussels", translations: ["brussels", "bruselas"] },
+    { city: "havana", translations: ["havana", "habana", "la habana"] },
+    { city: "las-vegas", translations: ["las vegas", "vegas"] },
+  ],
+  [
+    {
+      city: "vatican-city",
+      translations: [
+        "vatican",
+        "vatican city",
+        "ciudad del vaticano",
+        "vaticano",
+      ],
+    },
+    { city: "angkor", translations: ["angkor", "angkor wat"] },
+    { city: "agra", translations: ["agra"] },
+    { city: "nuuk", translations: ["nuuk", "groenlandia", "greenland"] },
+    { city: "granada", translations: ["granada"] },
+    {
+      city: "saint-petersburg",
+      translations: ["saint petersburg", "san petersburgo"],
+    },
+    { city: "zaragoza", translations: ["zaragoza"] },
+    {
+      city: "copenhagen",
+      translations: ["copenhagen", "copenhague", "copenhage"],
+    },
+    { city: "hong-kong", translations: ["hong kong", "hong kong"] },
+    { city: "istanbul", translations: ["istanbul", "estambul"] },
+    { city: "lisbon", translations: ["lisbon", "lisboa"] },
+    { city: "marrakesh", translations: ["marrakesh", "marrakech"] },
   ],
 ];
 
-export const getCityTranslationsArray = (city) => {
-  switch (city) {
-    case "barcelona":
-      return ["barcelona"];
-    case "seville":
-      return ["seville", "sevilla"];
-    case "paris":
-      return ["paris", "parís"];
-    case "florence":
-      return ["florence", "florencia", "firenze"];
-    case "los-angeles":
-      return ["los angeles", "los ángeles", "la"];
-    case "tokyo":
-      return ["tokyo", "tokio"];
-    case "nuuk":
-      return ["nuuk", "groenlandia", "greenland"];
-    case "rio-de-janeiro":
-      return ["rio de janeiro", "río de janeiro", "rio"];
-    case "jerusalem":
-      return ["jerusalem", "jerusalén", "jerusalen"];
-    case "rome":
-      return ["rome", "roma"];
-    case "new-york":
-      return ["new york", "nueva york"];
-    case "beijing":
-      return ["beijing", "pekín", "pekin"];
-    case "moscow":
-      return ["moscow", "moscú", "moscu"];
-    case "saint-petersburg":
-      return ["saint petersburg", "san petersburgo"];
-    case "london":
-      return ["london", "londres"];
-    case "toronto":
-      return ["toronto"];
-    case "cairo":
-      return ["el cairo", "cairo"];
-    case "granada":
-      return ["granada"];
-    case "sydney":
-      return ["sydney", "sidney"];
-    case "havana":
-      return ["havana", "habana", "la habana"];
-    case "bilbao":
-      return ["bilbao", "bilbo"];
-    case "berlin":
-      return ["berlin", "berlín"];
-    case "venice":
-      return ["venice", "venecia", "venezia"];
-    case "mecca":
-      return ["mecca", "meca", "la mecca"];
-    default:
-      return [];
-  }
+export const getCityTranslations = (level, city) => {
+  return cities[level - 1].find((c) => c.city === city).translations;
 };
 
 export const getNumberOfLevels = () => {
@@ -89,9 +94,7 @@ export const getNumberOfLevels = () => {
 };
 
 export const getLevelCities = (level) => {
-  return cities[level - 1];
-};
-
-export const getCities = () => {
-  return cities;
+  return cities[level - 1].map((city) => {
+    return city.city;
+  });
 };

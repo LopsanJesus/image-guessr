@@ -10,6 +10,7 @@ import Level from "./components/Level";
 import Home from "./components/Home";
 import NotFound from "./components/NotFound";
 import RouteChangeTracker from "./components/Analytics/ReactChangeTracker";
+import ShareButtons from "./components/ShareButtons";
 
 function App() {
   return (
@@ -26,6 +27,10 @@ function App() {
 
               <Route exact path="/play/level/:level">
                 <Level />
+              </Route>
+
+              <Route exact path="/share">
+                <ShareButtons />
               </Route>
 
               {/* <Route exact path="/about">

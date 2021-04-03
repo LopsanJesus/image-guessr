@@ -1,6 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import ReactGA from "react-ga";
+import ShareButtons from "../ShareButtons/ShareButtons";
 
 import { withTranslation } from "react-i18next";
 
@@ -69,6 +70,9 @@ const AlertModal = ({ level, setShowModal, t }) => {
               >
                 {t("Let me finish")}
               </button>
+            </div>
+            <div className="mt-5">
+              <ShareButtons />
             </div>
           </div>
         </div>

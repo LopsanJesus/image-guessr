@@ -4,13 +4,13 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Redirect } from "react-router-dom";
 
-import TopBar from "./components/TopBar";
-import MainMenu from "./components/MainMenu";
-import Level from "./components/Level";
 import Home from "./components/Home";
+import Level from "./components/Level";
+import MainMenu from "./components/MainMenu";
 import NotFound from "./components/NotFound";
 import RouteChangeTracker from "./components/Analytics/ReactChangeTracker";
-import ShareButtons from "./components/ShareButtons";
+import Share from "./components/Share";
+import TopBar from "./components/TopBar";
 
 function App() {
   return (
@@ -30,7 +30,7 @@ function App() {
               </Route>
 
               <Route exact path="/share">
-                <ShareButtons />
+                <Share />
               </Route>
 
               {/* <Route exact path="/about">

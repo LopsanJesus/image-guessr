@@ -2,9 +2,11 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import ReactGA from "react-ga";
 
+import { withTranslation } from "react-i18next";
+
 import "./AlertModal.css";
 
-const AlertModal = ({ level, setShowModal }) => {
+const AlertModal = ({ level, setShowModal, t }) => {
   const history = useHistory();
 
   return (
@@ -30,7 +32,7 @@ const AlertModal = ({ level, setShowModal }) => {
               <div class="sm:flex sm:items-start">
                 <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
                   <h3 class="text-lg leading-6 font-medium text-gray-900">
-                    You unlocked level {parseInt(level) + 1}!
+                    {t("You unlocked level") + (parseInt(level) + 1) + "!"}
                   </h3>
                 </div>
               </div>
@@ -50,7 +52,7 @@ const AlertModal = ({ level, setShowModal }) => {
                   history.push("/play/level/" + (parseInt(level) + 1));
                 }}
               >
-                Go!
+                {t("Go")}
               </button>
               <button
                 id="close-modal-level-button"
@@ -65,7 +67,7 @@ const AlertModal = ({ level, setShowModal }) => {
                   });
                 }}
               >
-                Let me finish
+                {t("Let me finish")}
               </button>
             </div>
           </div>
@@ -75,4 +77,4 @@ const AlertModal = ({ level, setShowModal }) => {
   );
 };
 
-export default AlertModal;
+export default withTranslation()(AlertModal);

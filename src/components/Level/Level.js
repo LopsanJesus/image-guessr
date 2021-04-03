@@ -15,10 +15,10 @@ const Level = ({ t }) => {
   const [level, setLevel] = useState(params.level);
 
   useEffect(() => {
-    if (params.level != level) {
+    if (params.level !== level) {
       setLevel(params.level);
     }
-  }, [params]);
+  }, [params, level]);
 
   var storedCities = getStoredArray("cities" + level);
 

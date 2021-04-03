@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 
+import { withTranslation } from "react-i18next";
+
 import "./style.css";
 
 const URL = window.location.origin;
 
-const CopyLinkIcon = () => {
+const CopyLinkIcon = ({ t }) => {
   const [showConfirmation, setShowConfirmation] = useState(false);
   const handleClick = () => {
     navigator.clipboard.writeText(URL);
@@ -34,11 +36,11 @@ const CopyLinkIcon = () => {
       </div>
       {showConfirmation && (
         <span className="text-gray-500 text-sm absolute -mt-7">
-          Link copied to clipboard
+          {t("Link copied to clipboard")}
         </span>
       )}
     </>
   );
 };
 
-export default CopyLinkIcon;
+export default withTranslation()(CopyLinkIcon);

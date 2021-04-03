@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Level.css";
 import { Redirect, useParams } from "react-router-dom";
 import ReactGA from "react-ga";
@@ -12,7 +12,13 @@ import { withTranslation } from "react-i18next";
 
 const Level = ({ t }) => {
   const params = useParams();
-  const [level] = useState(params.level);
+  const [level, setLevel] = useState(params.level);
+
+  useEffect(() => {
+    if (params.level != level) {
+      setLevel(params.level);
+    }
+  }, [params]);
 
   var storedCities = getStoredArray("cities" + level);
 

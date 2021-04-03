@@ -1,11 +1,12 @@
 import React, { useRef, useState } from "react";
 import ReactGA from "react-ga";
 
+import { withTranslation } from "react-i18next";
 import "./GuessModal.css";
 
 import { getCityTranslationsArray } from "../../data/cities";
 
-const GuessModal = ({ city, addHit, setShowModal, level }) => {
+const GuessModal = ({ city, addHit, setShowModal, level, t }) => {
   const modalInput = useRef(null);
   const [error, setError] = useState(false);
 
@@ -113,7 +114,7 @@ const GuessModal = ({ city, addHit, setShowModal, level }) => {
                   checkGuess();
                 }}
               >
-                Check
+                {t("Check")}
               </button>
               <button
                 id="close-modal-button"
@@ -123,7 +124,7 @@ const GuessModal = ({ city, addHit, setShowModal, level }) => {
                   setShowModal(false);
                 }}
               >
-                Cancel
+                {t("Cancel")}
               </button>
             </div>
           </div>
@@ -133,4 +134,4 @@ const GuessModal = ({ city, addHit, setShowModal, level }) => {
   );
 };
 
-export default GuessModal;
+export default withTranslation()(GuessModal);

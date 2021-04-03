@@ -1,13 +1,16 @@
 import React from "react";
 import WhatsAppIcon from "../../assets/WhatsAppIcon/WhatsAppIcon";
+
+import { withTranslation } from "react-i18next";
+
 import "./ShareButtons.css";
 
-const ShareButtons = () => {
+const ShareButtons = ({ t }) => {
   return (
     <div className="flex justify-center w-full py-8">
       <div className="overflow-hidden rounded max-w-md w-full shadow-lg bg-white">
         <div className="flex justify-center text-3xl my-10">
-          Compite con tus amigos!
+          {t("Play with your friends")}
         </div>
         <div className="flex justify-center mb-10">
           <WhatsAppIcon />
@@ -17,4 +20,4 @@ const ShareButtons = () => {
   );
 };
 
-export default ShareButtons;
+export default withTranslation()(ShareButtons);

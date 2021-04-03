@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { withTranslation } from "react-i18next";
 
 import "./TopBar.css";
+import ShareIcon from "../../assets/ShareIcon/ShareIcon";
 
 const TopBar = ({ t }) => {
   return (
@@ -17,7 +18,10 @@ const TopBar = ({ t }) => {
                 </span>
               </div>
             </div>
-            <div className="ml-3 relative">
+            <div className="ml-3 relative flex">
+              <div className="mr-2">
+                <ShareIcon />
+              </div>
               <Link
                 to={"/play"}
                 className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"

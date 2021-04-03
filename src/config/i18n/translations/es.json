@@ -1,0 +1,24 @@
+{
+  "translation": {
+    "Welcome to ImageGuessr": "¡Bienvenid@ a ImageGuessr!",
+    "Guess each city": "Adivina cada ciudad",
+    "Menu": "Menú",
+    "Level": "Nivel",
+    "Score": "Puntos",
+    "More levels coming soon...": "Más niveles próximamente...",
+    "Achieve 10 points to unlock level": "Consigue 10 puntos para alcanzar el nivel",
+
+    "PARIS": "París",
+    "BEIJING": "Pekín",
+    "SEVILLE": "Sevilla",
+    "RIO DE JANEIRO": "Río de Janeiro",
+    "FLORENCE": "Florencia",
+    "LOS ANGELES": "Los Ángeles",
+    "TOKYO": "Tokio",
+    "JERUSALEM": "Jerusalén",
+    "NEW YORK": "Nueva York",
+    "ROME": "Roma",
+
+    "Play": "Jugar"
+  }
+}

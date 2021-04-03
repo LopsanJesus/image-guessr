@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { withTranslation } from "react-i18next";
 
 import "./LevelListItem.css";
 
-const LevelListItem = ({ level, hits, disabled }) => {
+const LevelListItem = ({ level, hits, disabled, t }) => {
   return (
     <Link
       to={"/play/level/" + level}
@@ -20,7 +21,7 @@ const LevelListItem = ({ level, hits, disabled }) => {
           disabled ? "" : "group-hover:text-white"
         }`}
       >
-        Level {level}
+        {t("Level") + " " + level}
       </p>
 
       <p
@@ -34,4 +35,4 @@ const LevelListItem = ({ level, hits, disabled }) => {
   );
 };
 
-export default LevelListItem;
+export default withTranslation()(LevelListItem);

@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { withTranslation } from "react-i18next";
 
 import "./TopBar.css";
 
-const TopBar = () => {
+const TopBar = ({ t }) => {
   return (
     <div>
       <nav className="bg-gray-800">
@@ -21,7 +22,7 @@ const TopBar = () => {
                 to={"/play"}
                 className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
               >
-                Menu
+                {t("Menu")}
               </Link>
             </div>
           </div>
@@ -31,4 +32,4 @@ const TopBar = () => {
   );
 };
 
-export default TopBar;
+export default withTranslation()(TopBar);

@@ -65,13 +65,14 @@ const Level = ({ t }) => {
                 {t("Guess each city")}
               </h1>
               <h1 className="font-bold text-3xl text-gray-900">
-                Level {level} | Score: <span id="score">{score}</span>
+                {`${t("Level")} ${level} | ${t("Score")}: `}
+                <span id="score">{score}</span>
               </h1>
               <p
                 id="goal-message"
                 className="font-base text-base text-gray-600 m-5"
               >
-                Achieve 10 points to unlock level {parseInt(level) + 1}.
+                {t("Achieve 10 points to unlock level")} {parseInt(level) + 1}.
               </p>
             </div>
 
@@ -105,9 +106,9 @@ const Level = ({ t }) => {
                       {isStored && (
                         <div
                           id={image + "text"}
-                          className="imagetext font-extrabold rounded-xl text-green-500 bg-white p-4 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                          className="imagetext uppercase font-extrabold rounded-xl text-green-500 bg-white p-4 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
                         >
-                          {image.replaceAll("-", " ").toUpperCase()}
+                          {t(image.replaceAll("-", " ").toUpperCase())}
                         </div>
                       )}
                     </div>

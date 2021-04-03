@@ -7,8 +7,9 @@ import { getStoredItem } from "../../helpers/storage.js";
 import { getHitsPerLevel } from "../../helpers/score.js";
 import { getNumberOfLevels } from "../../data/cities.js";
 import _ from "lodash";
+import { withTranslation } from "react-i18next";
 
-const MainMenu = () => {
+const MainMenu = ({ t }) => {
   const numberOfLevels = getNumberOfLevels();
   const lastLevelAchieved =
     getStoredItem("level") > 0 ? getStoredItem("level") : 0;
@@ -36,7 +37,7 @@ const MainMenu = () => {
           )}
 
           <span className="flex justify-center text-gray-500 font-bold text-xl text-black group-hover:text-white m-6">
-            More levels coming soon...
+            {t("More levels coming soon...")}
           </span>
         </div>
       </div>
@@ -44,4 +45,4 @@ const MainMenu = () => {
   );
 };
 
-export default MainMenu;
+export default withTranslation()(MainMenu);

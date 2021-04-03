@@ -5,7 +5,7 @@ import "./ShareButtons.css";
 const ShareButtons = () => {
   return (
     <div className="flex justify-center w-full py-8">
-      <div className="overflow-hidden rounded max-w-md w-full shadow-lg">
+      <div className="overflow-hidden rounded max-w-md w-full shadow-lg bg-white">
         <div className="flex justify-center text-3xl my-10">
           Compite con tus amigos!
         </div>

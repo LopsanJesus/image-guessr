@@ -1,16 +1,17 @@
 import React from "react";
-import ShareIcon from "../../assets/ShareIcon/ShareIcon";
 import WhatsAppIcon from "../../assets/WhatsAppIcon/WhatsAppIcon";
 import "./ShareButtons.css";
 
 const ShareButtons = () => {
   return (
-    <div className="flex flex-row">
-      <div className="flex-1">
-        <ShareIcon />
-      </div>
-      <div className="flex-1">
-        <WhatsAppIcon />
+    <div className="flex justify-center w-full py-8">
+      <div className="overflow-hidden rounded max-w-md w-full shadow-lg">
+        <div className="flex justify-center text-3xl my-10">
+          Compite con tus amigos!
+        </div>
+        <div className="flex justify-center mb-10">
+          <WhatsAppIcon />
+        </div>
       </div>
     </div>
   );

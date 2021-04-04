@@ -8,6 +8,7 @@ import { getHitsPerLevel } from "../../helpers/score.js";
 import { getNumberOfLevels } from "../../data/cities.js";
 import _ from "lodash";
 import { withTranslation } from "react-i18next";
+import ShareButtons from "../ShareButtons/ShareButtons";
 
 const MainMenu = ({ t }) => {
   const numberOfLevels = getNumberOfLevels();
@@ -39,6 +40,10 @@ const MainMenu = ({ t }) => {
           <span className="flex justify-center text-gray-500 font-bold text-xl text-black group-hover:text-white m-6">
             {t("More levels coming soon...")}
           </span>
+
+          <div className="mt-5">
+            <ShareButtons />
+          </div>
         </div>
       </div>
     </div>

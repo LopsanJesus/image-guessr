@@ -71,7 +71,7 @@ const Level = ({ t }) => {
               <h1 className="font-bold text-3xl text-gray-900 m-2">
                 {t("Guess each city")}
               </h1>
-              <h1 className="sticky top-16 bg-gray-300 z-30 w-full font-bold text-2xl text-gray-900 py-2">
+              <h1 className="sticky bg-gray-300 z-30 w-full font-bold text-2xl text-gray-900 py-2 score">
                 {`${t("Level")} ${level} | ${t("Score")}: `}
                 <span id="score">{score}</span>
               </h1>

@@ -1,5 +1,7 @@
 import { getStoredArray } from "./storage.js";
 
+export const SCORE_TO_UNLOCK_LEVEL = 10;
+
 export const getHitsPerLevel = () => {
   const achievedCitiesPerLevel = [];
   const hitsPerLevel = [];

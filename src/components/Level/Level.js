@@ -13,7 +13,7 @@ import { SCORE_TO_UNLOCK_LEVEL } from "../../helpers/score";
 // import _ from "lodash";
 import GuessModal from "../GuessModal";
 import AlertModal from "../AlertModal";
-import { getLevelCities } from "../../data/cities";
+import { getLevelCities, getNumberOfLevels } from "../../data/cities";
 import { withTranslation } from "react-i18next";
 import Footer from "../Footer";
 
@@ -80,12 +80,16 @@ const Level = ({ t }) => {
                 {`${t("Level")} ${level} | ${t("Score")}: `}
                 <span id="score">{score}</span>
               </h1>
-              <p
-                id="goal-message"
-                className="font-base text-base text-gray-600 my-2"
-              >
-                {t("Achieve 10 points to unlock level")} {parseInt(level) + 1}.
-              </p>
+              {console.log(level)}
+              {getNumberOfLevels() !== parseInt(level) && (
+                <p
+                  id="goal-message"
+                  className="font-base text-base text-gray-600 my-2"
+                >
+                  {t("Achieve 10 points to unlock level")} {parseInt(level) + 1}
+                  .
+                </p>
+              )}
               <section
                 id="photos"
                 className="grid grid-cols-1 md:grid-cols-4 gap-4"
@@ -147,7 +151,7 @@ const Level = ({ t }) => {
         />
       )}
 
-      {showAlertModal && (
+      {showAlertModal && getNumberOfLevels() !== parseInt(level) && (
         <AlertModal level={level} setShowModal={setShowAlertModal} />
       )}
     </div>

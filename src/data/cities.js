@@ -27,14 +27,9 @@ const cities = [
     { city: "london", translations: ["london", "londres"] },
     {
       city: "mexico-city",
-      translations: [
-        "mexico",
-        "ciudad de méxico",
-        "ciudad de mexico",
-        "mexico city",
-      ],
+      translations: ["ciudad de méxico", "ciudad de mexico", "mexico city"],
     },
-    { city: "sydney", translations: ["sydney", "sidney"] },
+    { city: "sydney", translations: ["sydney", "sidney", "sídney"] },
     { city: "paris", translations: ["paris", "parís"] },
     { city: "bilbao", translations: ["bilbao", "bilbo"] },
     { city: "berlin", translations: ["berlin", "berlín"] },
@@ -67,7 +62,7 @@ const cities = [
     },
     { city: "angkor", translations: ["angkor", "angkor wat"] },
     { city: "agra", translations: ["agra"] },
-    { city: "nuuk", translations: ["nuuk", "groenlandia", "greenland"] },
+    { city: "nuuk", translations: ["nuuk"] },
     { city: "granada", translations: ["granada"] },
     {
       city: "saint-petersburg",

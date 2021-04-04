@@ -21,15 +21,19 @@ const Level = ({ t }) => {
   const params = useParams();
   const [level, setLevel] = useState(params.level);
 
+  const [storedCities, setStoredCities] = useState(
+    getStoredArray(CITIES_PREFIX + level)
+  );
+  const [score, setScore] = useState(storedCities.length);
+
   useEffect(() => {
     if (params.level !== level) {
       setLevel(params.level);
+      setStoredCities(getStoredArray(CITIES_PREFIX + params.level));
+      setScore(getStoredArray(CITIES_PREFIX + params.level).length);
     }
   }, [params, level]);
 
-  var storedCities = getStoredArray(CITIES_PREFIX + level);
-
-  const [score, setScore] = useState(storedCities.length);
   const [showModal, setShowModal] = useState(false);
   const [showAlertModal, setShowAlertModal] = useState(false);
   const [guessingCity, setGuessingCity] = useState("");
@@ -45,6 +49,7 @@ const Level = ({ t }) => {
     storeItem(guessingCity, CITIES_PREFIX + level);
     setScore(score + 1);
     setShowModal(false);
+    setStoredCities([...storedCities, guessingCity]);
 
     if (score + 1 === SCORE_TO_UNLOCK_LEVEL) {
       setShowAlertModal(true);

@@ -8,7 +8,7 @@ import "./ShareButtons.css";
 
 const ShareButtons = ({ t }) => {
   return (
-    <div className="flex justify-center mb-10 flex-row space-x-5">
+    <div className="flex justify-center flex-row space-x-5">
       <WhatsAppIcon />
       <CopyLinkIcon />
     </div>

@@ -9,6 +9,7 @@ import GuessModal from "../GuessModal";
 import AlertModal from "../AlertModal";
 import { getLevelCities } from "../../data/cities";
 import { withTranslation } from "react-i18next";
+import Footer from "../Footer";
 
 const Level = ({ t }) => {
   const params = useParams();
@@ -76,7 +77,7 @@ const Level = ({ t }) => {
               </h1>
               <p
                 id="goal-message"
-                className="font-base text-base text-gray-600 my-1"
+                className="font-base text-base text-gray-600 my-2"
               >
                 {t("Achieve 10 points to unlock level")} {parseInt(level) + 1}.
               </p>
@@ -129,6 +130,7 @@ const Level = ({ t }) => {
             </div>
           </div>
         </div>
+        <Footer />
       </div>
 
       {showModal && (

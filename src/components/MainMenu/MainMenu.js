@@ -9,6 +9,7 @@ import { getNumberOfLevels } from "../../data/cities.js";
 import _ from "lodash";
 import { withTranslation } from "react-i18next";
 import ShareButtons from "../ShareButtons/ShareButtons";
+import Footer from "../Footer";
 
 const MainMenu = ({ t }) => {
   const numberOfLevels = getNumberOfLevels();
@@ -41,11 +42,12 @@ const MainMenu = ({ t }) => {
             {t("More levels coming soon...")}
           </span>
 
-          <div className="mt-5">
+          <div className="mt-5 mb-10">
             <ShareButtons />
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

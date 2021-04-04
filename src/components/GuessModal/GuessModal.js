@@ -88,14 +88,14 @@ const GuessModal = ({ city, addHit, setShowModal, level, t }) => {
                 />
               </div>
             </div>
-            <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row">
+            <div className="bg-gray-50 px-4 py-4 sm:px-6 sm:flex sm:flex-row">
               <input
                 type="text"
                 id="guess-input"
                 name="name"
                 maxLength="30"
                 size="20"
-                className={`uppercase w-full inline-flex justify-center rounded-md border shadow-sm px-4 py-2 text-base font-medium text-black focus:outline-none sm:ml-3 sm:w-auto sm:text-sm ${
+                className={`uppercase w-full inline-flex justify-center rounded-md border shadow-sm px-4 pb-3 mb-3 text-base font-medium text-black focus:outline-none sm:ml-3 sm:w-auto sm:text-sm ${
                   error && "bg-red-400"
                 }`}
                 ref={modalInput}

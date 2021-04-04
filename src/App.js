@@ -9,6 +9,7 @@ import Level from "./components/Level";
 import MainMenu from "./components/MainMenu";
 import NotFound from "./components/NotFound";
 import RouteChangeTracker from "./components/Analytics/ReactChangeTracker";
+import ScrollToTop from "./components/ScrollToTop";
 import Share from "./components/Share";
 import TopBar from "./components/TopBar";
 
@@ -17,6 +18,7 @@ function App() {
     <div className="App">
       <Router>
         <RouteChangeTracker />
+        <ScrollToTop />
         <div className="router">
           <TopBar />
           <div className="content">

@@ -3,7 +3,7 @@ import "./MainMenu.css";
 
 import LevelListItem from "../LevelListItem";
 
-import { getStoredItem } from "../../helpers/storage.js";
+import { getLastLevelAchieved } from "../../helpers/storage.js";
 import { getHitsPerLevel } from "../../helpers/score.js";
 import { getNumberOfLevels } from "../../data/cities.js";
 import _ from "lodash";
@@ -13,8 +13,7 @@ import Footer from "../Footer";
 
 const MainMenu = ({ t }) => {
   const numberOfLevels = getNumberOfLevels();
-  const lastLevelAchieved =
-    getStoredItem("level") > 0 ? getStoredItem("level") : 0;
+  const lastLevelAchieved = getLastLevelAchieved();
   const hitsPerLevel = getHitsPerLevel();
 
   return (

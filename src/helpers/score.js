@@ -1,12 +1,14 @@
-import { getStoredArray } from "./storage.js";
+import { getStoredArray, CITIES_PREFIX } from "./storage.js";
+
+export const SCORE_TO_UNLOCK_LEVEL = 10;
 
 export const getHitsPerLevel = () => {
   const achievedCitiesPerLevel = [];
   const hitsPerLevel = [];
 
   var level = 1;
-  while (getStoredArray("cities" + level).length > 0) {
-    achievedCitiesPerLevel.push(getStoredArray("cities" + level));
+  while (getStoredArray(CITIES_PREFIX + level).length > 0) {
+    achievedCitiesPerLevel.push(getStoredArray(CITIES_PREFIX + level));
     level++;
   }
 

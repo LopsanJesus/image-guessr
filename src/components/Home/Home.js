@@ -3,8 +3,11 @@ import { Link } from "react-router-dom";
 import { withTranslation } from "react-i18next";
 
 import "./Home.css";
+import { getLastLevelAchieved } from "../../helpers/storage";
 
 const Home = ({ t }) => {
+  console.log(getLastLevelAchieved());
+
   return (
     <div>
       <div className="flex justify-center text-3xl m-20">

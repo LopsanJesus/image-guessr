@@ -1,37 +1,40 @@
-export const storeItem = (item, store) => {
-  if (localStorage.getItem(store) != null) {
-    localStorage.setItem(store, localStorage.getItem(store) + item + ",");
+import { getNumberOfLevels } from "../data/cities";
+import { SCORE_TO_UNLOCK_LEVEL } from "../helpers/score";
+
+export const CITIES_PREFIX = "level";
+
+export const getLastLevelAchieved = () => {
+  var lastLevelAchieved = 0;
+  for (let i = 1; i <= getNumberOfLevels(); i++) {
+    if (getStoredArray(CITIES_PREFIX + i).length >= SCORE_TO_UNLOCK_LEVEL) {
+      lastLevelAchieved = i;
+    }
+  }
+  return lastLevelAchieved;
+};
+
+export const storeItem = (item, key) => {
+  if (localStorage.getItem(key) != null) {
+    localStorage.setItem(key, localStorage.getItem(key) + item + ",");
   } else {
-    localStorage.setItem(store, item + ",");
+    localStorage.setItem(key, item + ",");
   }
 };
 
-export const checkItem = (item, store) => {
-  if (
-    localStorage.getItem(store) != null &&
-    localStorage
-      .getItem(store)
-      .split(",")
-      .includes(item + "")
-  )
-    return true;
-  return false;
-};
-
-export const getStoredItem = (store) => {
-  if (localStorage.getItem(store) != null) {
-    return localStorage.getItem(store);
+export const getStoredItem = (key) => {
+  if (localStorage.getItem(key) != null) {
+    return localStorage.getItem(key);
   }
   return null;
 };
 
-export const getStoredArray = (store) => {
+export const getStoredArray = (key) => {
   if (
-    typeof localStorage.getItem(store) !== "undefined" &&
-    localStorage.getItem(store) !== null
+    typeof localStorage.getItem(key) !== "undefined" &&
+    localStorage.getItem(key) !== null
   ) {
     return localStorage
-      .getItem(store)
+      .getItem(key)
       .split(",")
       .filter((item) => item.length > 0);
   }

@@ -41,21 +41,6 @@ const GuessModal = ({ city, addHit, setShowModal, level, t }) => {
       setError(true);
       trackError();
     }
-
-    // if (
-    //   input.toUpperCase() === text.toUpperCase() ||
-    //   translateCity(actualImg).includes(input.toLowerCase())
-    // ) {
-    //   addHit();
-
-    //   storeItem(actualImg, "cities" + level);
-    //   $("#modal").hide();
-    //   $("#" + actualImg + "text").html(text.toUpperCase());
-    //   $("#" + actualImg + "text").show();
-    //   $("#guess-input").removeclassName("bg-red-400");
-    // } else {
-    //   $("#guess-input").addclassName("bg-red-400");
-    // }
   };
 
   return (
@@ -105,6 +90,7 @@ const GuessModal = ({ city, addHit, setShowModal, level, t }) => {
                   }
                 }}
                 autoFocus
+                autoComplete="off"
               />
               <button
                 id="check-modal-button"

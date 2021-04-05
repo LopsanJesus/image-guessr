@@ -4,7 +4,6 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Redirect } from "react-router-dom";
 
-import ErrorBoundary from "./components/ErrorBoundary";
 import Home from "./components/Home";
 import Level from "./components/Level";
 import MainMenu from "./components/MainMenu";
@@ -23,37 +22,35 @@ function App() {
         <div className="router">
           <TopBar />
           <div className="content">
-            <ErrorBoundary>
-              <Switch>
-                <Route exact path="/play">
-                  <MainMenu />
-                </Route>
+            <Switch>
+              <Route exact path="/play">
+                <MainMenu />
+              </Route>
 
-                <Route exact path="/play/level/:level">
-                  <Level />
-                </Route>
+              <Route exact path="/play/level/:level">
+                <Level />
+              </Route>
 
-                <Route exact path="/share">
-                  <Share />
-                </Route>
+              <Route exact path="/share">
+                <Share />
+              </Route>
 
-                {/* <Route exact path="/about">
+              {/* <Route exact path="/about">
               <About />
             </Route> */}
 
-                {/* <Route path="/login/:redirect?">
+              {/* <Route path="/login/:redirect?">
               <LoginForm />
             </Route> */}
 
-                <Route exact path="/">
-                  <Home />
-                </Route>
+              <Route exact path="/">
+                <Home />
+              </Route>
 
-                <NotFound />
+              <NotFound />
 
-                <Redirect to="/" />
-              </Switch>
-            </ErrorBoundary>
+              <Redirect to="/" />
+            </Switch>
           </div>
         </div>
       </Router>

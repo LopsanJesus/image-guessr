@@ -3,7 +3,7 @@ import { Integrations } from "@sentry/tracing";
 
 const DEV_CONFIG = {
   environment: "development",
-  tracesSampleRate: 1.0,
+  tracesSampleRate: 0.5,
 };
 const PROD_CONFIG = {
   environment: "production",

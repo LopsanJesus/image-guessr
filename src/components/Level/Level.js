@@ -65,8 +65,6 @@ const Level = ({ t }) => {
       action: "Image clicked",
       label: "Nivel: " + level + " - Imagen: " + image,
     });
-
-    throw new Error("HOLA SENTRY!");
   };
 
   return (

@@ -1,6 +1,6 @@
 const cities = [
   [
-    { city: "cordoba", translations: ["cordoba"] },
+    { city: "cordoba", translations: ["cordoba", "córdoba"] },
     { city: "seville", translations: ["seville", "sevilla"] },
     { city: "amsterdam", translations: ["amsterdam", "ámsterdam"] },
     { city: "los-angeles", translations: ["los angeles", "los ángeles", "la"] },

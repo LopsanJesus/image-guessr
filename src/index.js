@@ -1,12 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import "./config/i18n/i18n"
+import "./config/i18n/i18n";
 import App from "./App";
+
 import reportWebVitals from "./reportWebVitals";
 import { configureAnalytics } from "./config/analytics";
+import { configureSentry } from "./config/sentry";
 
 configureAnalytics();
+
+configureSentry();
 
 ReactDOM.render(
   <React.StrictMode>

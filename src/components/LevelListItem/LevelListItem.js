@@ -1,23 +1,34 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { withTranslation } from "react-i18next";
+import { isLevelCompleted } from "../../helpers/score";
 
 import "./LevelListItem.css";
+import CheckIcon from "../../assets/CheckIcon/CheckIcon";
 
 const LevelListItem = ({ level, hits, disabled, t }) => {
   return (
     <Link
       to={"/play/level/" + level}
       id={"level-" + level}
-      className={`block group p-4 border-b m-4 rounded-3xl ${
-        disabled
+      className={`block group p-4 border-b m-4 rounded-3xl relative
+      ${
+        isLevelCompleted(hits)
+          ? "bg-green-400 hover:bg-green-500 text-white group-hover:text-white"
+          : disabled
           ? "bg-gray-400 opacity-25 cursor-not-allowed"
-          : "bg-white hover:bg-blue-600"
-      }`}
+          : "bg-white hover:bg-blue-400"
+      }
+      `}
       onClick={disabled ? (e) => e.preventDefault() : undefined}
     >
+      {isLevelCompleted(hits) && (
+        <div className="absolute right-0 mr-5">
+          <CheckIcon />
+        </div>
+      )}
       <p
-        className={`flex justify-center font-bold text-3xl mb-1 text-black ${
+        className={`flex justify-center font-bold text-3xl mb-1 ${
           disabled ? "" : "group-hover:text-white"
         }`}
       >

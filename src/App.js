@@ -4,6 +4,7 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Redirect } from "react-router-dom";
 
+import BackgroundImage from "./components/BackgroundImage";
 import Home from "./components/Home";
 import Level from "./components/Level";
 import MainMenu from "./components/MainMenu";
@@ -16,6 +17,7 @@ import TopBar from "./components/TopBar";
 function App() {
   return (
     <div className="App">
+      <BackgroundImage />
       <Router>
         <RouteChangeTracker />
         <ScrollToTop />

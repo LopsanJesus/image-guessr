@@ -1,13 +1,14 @@
-import React from "react";
+import { useEffect } from "react";
 import background from "./images/background1.jpg";
 
 const BackgroundImage = () => {
-  return (
-    <div
-      className="bg-scroll h-screen w-screen bg-cover bg-center absolute"
-      style={{ backgroundImage: `url(${background})`, zIndex: "-1" }}
-    ></div>
-  );
+  useEffect(() => {
+    document.body.style.backgroundImage = `url(${background})`;
+    document.body.style.backgroundPosition = "center";
+    document.body.style.backgroundAttachment = "fixed";
+    document.body.style.backgroundSize = "cover";
+  });
+  return null;
 };
 
 export default BackgroundImage;

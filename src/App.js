@@ -37,14 +37,6 @@ function App() {
                 <Share />
               </Route>
 
-              {/* <Route exact path="/about">
-              <About />
-            </Route> */}
-
-              {/* <Route path="/login/:redirect?">
-              <LoginForm />
-            </Route> */}
-
               <Route exact path="/">
                 <Home />
               </Route>

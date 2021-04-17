@@ -17,7 +17,6 @@ import TopBar from "./components/TopBar";
 function App() {
   return (
     <div className="App">
-      <BackgroundImage />
       <Router>
         <RouteChangeTracker />
         <ScrollToTop />
@@ -38,6 +37,7 @@ function App() {
               </Route>
 
               <Route exact path="/">
+                <BackgroundImage />
                 <Home />
               </Route>
 

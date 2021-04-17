@@ -80,7 +80,6 @@ const Level = ({ t }) => {
                 {`${t("Level")} ${level} | ${t("Score")}: `}
                 <span id="score">{score}</span>
               </h1>
-              {console.log(level)}
               {getNumberOfLevels() !== parseInt(level) && (
                 <p
                   id="goal-message"

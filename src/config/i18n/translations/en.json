@@ -1,6 +1,6 @@
 {
   "translation": {
-    "Welcome to ImageGuessr": "Welcome to ImageGuessr!",
+    "ImageGuessr": "ImageGuessr",
     "Guess each city": "Guess each city",
     "Menu": "Menu",
     "Level": "Level",
@@ -16,7 +16,7 @@
     "Play with your friends": "Play with your friends!",
     "Link copied to clipboard": "Link copied to clipboard",
 
-    "Play": "Play",
+    "Play": "PLAY",
 
     "CORDOBA": "Cordoba",
     "SEVILLE": "Seville",

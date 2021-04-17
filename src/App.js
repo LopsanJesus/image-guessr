@@ -4,6 +4,7 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Redirect } from "react-router-dom";
 
+import BackgroundImage from "./components/BackgroundImage";
 import Home from "./components/Home";
 import Level from "./components/Level";
 import MainMenu from "./components/MainMenu";
@@ -35,15 +36,8 @@ function App() {
                 <Share />
               </Route>
 
-              {/* <Route exact path="/about">
-              <About />
-            </Route> */}
-
-              {/* <Route path="/login/:redirect?">
-              <LoginForm />
-            </Route> */}
-
               <Route exact path="/">
+                <BackgroundImage />
                 <Home />
               </Route>
 

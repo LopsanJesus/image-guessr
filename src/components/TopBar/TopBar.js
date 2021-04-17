@@ -1,11 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { withTranslation } from "react-i18next";
 
 import "./TopBar.css";
 import ShareIcon from "../../assets/ShareIcon/ShareIcon";
 
 const TopBar = ({ t }) => {
+  const location = useLocation();
+
+  if (location.pathname === "/") return null;
   return (
     <div className="sticky top-0 z-20">
       <nav className="bg-gray-800">

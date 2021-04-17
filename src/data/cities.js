@@ -27,7 +27,7 @@ const cities = [
     { city: "london", translations: ["london", "londres"] },
     {
       city: "mexico-city",
-      translations: ["ciudad de méxico", "ciudad de mexico", "mexico city"],
+      translations: ["ciudad de méxico", "ciudad de mexico", "mexico city", "mexico df", "méxico df", "mexico d.f.", "méxico d.f."],
     },
     { city: "sydney", translations: ["sydney", "sidney", "sídney"] },
     { city: "paris", translations: ["paris", "parís"] },

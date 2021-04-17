@@ -29,7 +29,7 @@ const TopBar = ({ t }) => {
                 to={"/play"}
                 className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
               >
-                {t("Menu")}
+                {t("Levels")}
               </Link>
             </div>
           </div>

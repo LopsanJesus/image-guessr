@@ -81,10 +81,10 @@ const images = [
   ],
   [
     { image: "cairo", type: "city", translations: ["el cairo", "cairo"] },
-    { image: "monaco", type: "city", translations: ["monaco", "mónaco"] },
+    { image: "monaco", type: "country", translations: ["monaco", "mónaco"] },
     {
       image: "milan",
-      type: "city",
+      type: "monument",
       translations: ["milan", "milán", "milano"],
     },
     {

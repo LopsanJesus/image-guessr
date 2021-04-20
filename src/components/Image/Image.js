@@ -1,6 +1,30 @@
 import React from "react";
 import { withTranslation } from "react-i18next";
 import CityIcon from "../../assets/CityIcon/CityIcon";
+import CountryIcon from "../../assets/CountryIcon/CountryIcon";
+import MonumentIcon from "../../assets/MonumentIcon/MonumentIcon";
+
+const getIcon = (type) => {
+  switch (type) {
+    case "city":
+      return <CityIcon />;
+    case "country":
+      return <CountryIcon />;
+    case "monument":
+      return <MonumentIcon />;
+  }
+};
+
+const getColor = (type) => {
+  switch (type) {
+    case "city":
+      return "yellow-300";
+    case "country":
+      return "blue-300";
+    case "monument":
+      return "pink-300";
+  }
+};
 
 const Image = ({ image, isStored, onClick, t }) => {
   console.log(image);
@@ -8,10 +32,12 @@ const Image = ({ image, isStored, onClick, t }) => {
 
   return (
     <div className="image-container relative inline-block text-center">
-      <div className="absolute left-0 bg-green-500 rounded-lg ">
-        <div className="m-0.5 p-2">
-          <CityIcon />
-        </div>
+      <div
+        className={`absolute left-0 rounded-lg ${
+          !isStored ? "bg-" + getColor(image.type) : "bg-green-500"
+        }`}
+      >
+        <div className="m-0.5 p-2">{getIcon(image.type)}</div>
       </div>
       <img
         id={imageName}
@@ -19,8 +45,8 @@ const Image = ({ image, isStored, onClick, t }) => {
         width="500"
         height="600"
         className={`image ${
-          isStored ? "border-2 rounded-lg border-green-500" : "hover:opacity-75"
-        }`}
+          !isStored ? "border-" + getColor(image.type) : "border-green-500"
+        } border-4 rounded-lg`}
         alt={imageName}
         onClick={!isStored ? () => onClick(imageName) : undefined}
       />

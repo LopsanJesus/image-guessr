@@ -8,14 +8,12 @@ const Home = ({ t }) => {
   return (
     <div className="flex flex-col h-screen w-screen">
       <div className="my-20 h-2/5">
-        <div className="xl:bg-white xl:bg-opacity-30">
-          <h1
-            className="text-5xl xl:text-9xl text-white tracking-widest"
-            style={{ textShadow: `2px 2px 3px black` }}
-          >
-            {t("ImageGuessr")}
-          </h1>
-        </div>
+        <h1
+          className="text-5xl text-white tracking-widest"
+          style={{ textShadow: `2px 2px 3px black` }}
+        >
+          {t("ImageGuessr")}
+        </h1>
       </div>
       <div className="">
         <Link

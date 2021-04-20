@@ -44,10 +44,10 @@ const Image = ({ image, isStored, onClick, t }) => {
         src={"/img/" + imageName + ".jpg"}
         width="500"
         height="600"
-        className={`image ${
+        className={`image cursor-pointer ${
           !isStored ? "" : "border-green-500"
         } border-4 rounded-lg`}
-        alt={imageName}
+        alt="ImageGuessr"
         onClick={() => onClick(imageName)}
       />
       {isStored && (

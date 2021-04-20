@@ -45,7 +45,7 @@ const Image = ({ image, isStored, onClick, t }) => {
         width="500"
         height="600"
         className={`image ${
-          !isStored ? "border-" + getColor(image.type) : "border-green-500"
+          !isStored ? "" : "border-green-500"
         } border-4 rounded-lg`}
         alt={imageName}
         onClick={!isStored ? () => onClick(imageName) : undefined}

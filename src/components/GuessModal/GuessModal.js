@@ -72,7 +72,7 @@ const GuessModal = ({
             aria-modal="true"
             aria-labelledby="modal-headline"
           >
-            <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+            <div className="bg-white px-4 pt-5 sm:p-6 sm:pb-4">
               <Image
                 imageName={imageName}
                 imageType={imageType}
@@ -88,7 +88,7 @@ const GuessModal = ({
                     name="name"
                     maxLength="30"
                     size="20"
-                    className={`uppercase w-full inline-flex justify-center rounded-md border shadow-sm px-4 mb-3 text-base font-medium text-black focus:outline-none sm:ml-3 sm:w-auto sm:text-sm ${
+                    className={`leading-10 uppercase w-full inline-flex justify-center rounded-md border shadow-sm px-4 mb-3 text-base font-medium text-black focus:outline-none sm:ml-3 sm:w-auto sm:text-sm ${
                       error && "bg-red-400"
                     }`}
                     ref={modalInput}

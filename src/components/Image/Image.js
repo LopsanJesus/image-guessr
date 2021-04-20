@@ -1,6 +1,6 @@
 import React from "react";
 import { withTranslation } from "react-i18next";
-import CameraIcon from "../../assets/CameraIcon/CameraIcon";
+import CityIcon from "../../assets/CityIcon/CityIcon";
 
 const Image = ({ image, isStored, onClick, t }) => {
   console.log(image);
@@ -9,8 +9,8 @@ const Image = ({ image, isStored, onClick, t }) => {
   return (
     <div className="image-container relative inline-block text-center">
       <div className="absolute left-0 bg-green-500 rounded-lg ">
-        <div className="m-0.5 white">
-          <CameraIcon />
+        <div className="m-0.5 p-2">
+          <CityIcon />
         </div>
       </div>
       <img

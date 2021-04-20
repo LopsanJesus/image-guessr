@@ -26,18 +26,17 @@ const getColor = (type) => {
   }
 };
 
-const Image = ({ image, isStored, onClick, t }) => {
-  console.log(image);
-  const imageName = image.image;
+const Image = ({ imageType, imageName, isStored, onClick, t }) => {
+  console.log(imageName);
 
   return (
     <div className="image-container relative inline-block text-center">
       <div
         className={`absolute left-0 rounded-lg ${
-          !isStored ? "bg-" + getColor(image.type) : "bg-green-500"
+          !isStored ? "bg-" + getColor(imageType) : "bg-green-500"
         }`}
       >
-        <div className="m-0.5 p-2">{getIcon(image.type)}</div>
+        <div className="m-0.5 p-2">{getIcon(imageType)}</div>
       </div>
       <img
         id={imageName}
@@ -48,7 +47,7 @@ const Image = ({ image, isStored, onClick, t }) => {
           !isStored ? "" : "border-green-500"
         } border-4 rounded-lg`}
         alt="ImageGuessr"
-        onClick={() => onClick(imageName)}
+        onClick={() => onClick && onClick({ imageName, imageType })}
       />
       {isStored && (
         <div

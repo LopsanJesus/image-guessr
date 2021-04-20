@@ -5,13 +5,22 @@ import { withTranslation } from "react-i18next";
 import "./GuessModal.css";
 
 import { getImageTranslations } from "../../data/cities";
+import Image from "../Image/Image";
 
-const GuessModal = ({ city, addHit, setShowModal, level, isStored, t }) => {
+const GuessModal = ({
+  imageName,
+  imageType,
+  addHit,
+  setShowModal,
+  level,
+  t,
+  isStored,
+}) => {
   const modalInput = useRef(null);
   const [error, setError] = useState(false);
 
   const getLabel = () => {
-    return "Level: " + level + " - Imagen: " + city;
+    return "Level: " + level + " - Imagen: " + imageName;
   };
   const trackHit = () => {
     ReactGA.event({
@@ -31,7 +40,7 @@ const GuessModal = ({ city, addHit, setShowModal, level, isStored, t }) => {
 
   const checkGuess = () => {
     if (
-      getImageTranslations(level, city).includes(
+      getImageTranslations(level, imageName).includes(
         modalInput.current.value.trim().toLowerCase()
       )
     ) {
@@ -64,14 +73,11 @@ const GuessModal = ({ city, addHit, setShowModal, level, isStored, t }) => {
             aria-labelledby="modal-headline"
           >
             <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-              <div className="sm:flex sm:items-start">
-                <img
-                  id="modal-img"
-                  src={`/img/${city}.jpg`}
-                  className="w-500 h-600 md:w-1000 md:h-1200"
-                  alt="City"
-                />
-              </div>
+              <Image
+                imageName={imageName}
+                imageType={imageType}
+                isStored={isStored}
+              />
             </div>
             <div className="bg-gray-50 px-4 py-4 sm:px-6 sm:flex sm:flex-row">
               {!isStored && (

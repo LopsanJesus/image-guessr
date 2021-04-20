@@ -36,7 +36,7 @@ const Level = ({ t }) => {
 
   const [showModal, setShowModal] = useState(false);
   const [showAlertModal, setShowAlertModal] = useState(false);
-  const [guessingCity, setGuessingCity] = useState("");
+  const [guessingCity, setGuessingCity] = useState({});
 
   var lastLevelAchieved = getLastLevelAchieved();
 
@@ -46,7 +46,7 @@ const Level = ({ t }) => {
   var images = getLevelImages(level);
 
   const addHit = () => {
-    storeItem(guessingCity, CITIES_PREFIX + level);
+    storeItem(guessingCity.imageName, CITIES_PREFIX + level);
     setScore(score + 1);
     setShowModal(false);
     setStoredCities([...storedCities, guessingCity]);
@@ -56,14 +56,14 @@ const Level = ({ t }) => {
     }
   };
 
-  const handleImageClick = (image) => {
-    setGuessingCity(image);
+  const handleImageClick = ({ imageName, imageType }) => {
+    setGuessingCity({ imageName, imageType });
     setShowModal(true);
 
     ReactGA.event({
       category: "Image",
       action: "Image clicked",
-      label: "Nivel: " + level + " - Imagen: " + image,
+      label: "Nivel: " + level + " - Imagen: " + imageName,
     });
   };
 
@@ -99,7 +99,8 @@ const Level = ({ t }) => {
                     return (
                       <Image
                         key={image.image}
-                        image={image}
+                        imageName={image.image}
+                        imageType={image.type}
                         isStored={isStored}
                         onClick={handleImageClick}
                       />
@@ -119,11 +120,12 @@ const Level = ({ t }) => {
 
       {showModal && (
         <GuessModal
-          city={guessingCity}
-          isStored={storedCities.includes(guessingCity)}
+          imageName={guessingCity.imageName}
+          imageType={guessingCity.imageType}
           addHit={addHit}
           setShowModal={setShowModal}
           level={level}
+          isStored={storedCities.includes(guessingCity.imageName)}
         />
       )}
 

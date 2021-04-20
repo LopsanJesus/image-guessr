@@ -80,7 +80,7 @@ const GuessModal = ({ city, addHit, setShowModal, level, t }) => {
                 name="name"
                 maxLength="30"
                 size="20"
-                className={`leading-4 uppercase w-full inline-flex justify-center rounded-md border shadow-sm px-4 mb-3 text-base font-medium text-black focus:outline-none sm:ml-3 sm:w-auto sm:text-sm ${
+                className={`uppercase w-full inline-flex justify-center rounded-md border shadow-sm px-4 mb-3 text-base font-medium text-black focus:outline-none sm:ml-3 sm:w-auto sm:text-sm ${
                   error && "bg-red-400"
                 }`}
                 ref={modalInput}

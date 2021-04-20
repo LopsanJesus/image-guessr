@@ -4,7 +4,7 @@ import ReactGA from "react-ga";
 import { withTranslation } from "react-i18next";
 import "./GuessModal.css";
 
-import { getCityTranslations } from "../../data/cities";
+import { getImageTranslations } from "../../data/cities";
 
 const GuessModal = ({ city, addHit, setShowModal, level, t }) => {
   const modalInput = useRef(null);
@@ -31,7 +31,7 @@ const GuessModal = ({ city, addHit, setShowModal, level, t }) => {
 
   const checkGuess = () => {
     if (
-      getCityTranslations(level, city).includes(
+      getImageTranslations(level, city).includes(
         modalInput.current.value.trim().toLowerCase()
       )
     ) {

@@ -13,7 +13,7 @@ import { SCORE_TO_UNLOCK_LEVEL } from "../../helpers/score";
 // import _ from "lodash";
 import GuessModal from "../GuessModal";
 import AlertModal from "../AlertModal";
-import { getLevelCities, getNumberOfLevels } from "../../data/cities";
+import { getLevelImages, getNumberOfLevels } from "../../data/cities";
 import { withTranslation } from "react-i18next";
 import Footer from "../Footer";
 import CameraIcon from "../../assets/CameraIcon/CameraIcon";
@@ -44,7 +44,7 @@ const Level = ({ t }) => {
   if (parseInt(level) < 1 || lastLevelAchieved + 1 < parseInt(level))
     return <Redirect to="/play" />;
 
-  var images = getLevelCities(level);
+  var images = getLevelImages(level);
 
   const addHit = () => {
     storeItem(guessingCity, CITIES_PREFIX + level);

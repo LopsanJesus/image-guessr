@@ -67,19 +67,22 @@ const GuessModal = ({
             &#8203;
           </span>
           <div
-            className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-3xl sm:w-full"
+            className="inline-block bg-gray-50 align-bottom bg-gray-50 rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-3xl sm:w-full"
             role="dialog"
             aria-modal="true"
             aria-labelledby="modal-headline"
           >
-            <div className="bg-white px-4 pt-5 sm:p-6 sm:pb-4">
+            <h3 className="font-bold text-center text-2xl text-gray-900 mt-4">
+              {t(imageType)}
+            </h3>
+            <div className="px-4 pt-5 sm:p-6 sm:pb-4">
               <Image
                 imageName={imageName}
                 imageType={imageType}
                 isStored={isStored}
               />
             </div>
-            <div className="bg-gray-50 px-4 py-4 sm:px-6 sm:flex sm:flex-row">
+            <div className="px-4 py-4 sm:px-6 sm:flex sm:flex-row">
               {!isStored && (
                 <>
                   <input

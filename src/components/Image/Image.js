@@ -43,7 +43,7 @@ const Image = ({ imageType, imageName, isStored, onClick, t }) => {
         src={"/img/" + imageName + ".jpg"}
         width="500"
         height="600"
-        className={`image cursor-pointer ${
+        className={`image max-h-96 cursor-pointer ${
           !isStored ? "" : "border-green-500"
         } border-4 rounded-lg`}
         alt="ImageGuessr"

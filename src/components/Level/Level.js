@@ -120,6 +120,7 @@ const Level = ({ t }) => {
       {showModal && (
         <GuessModal
           city={guessingCity}
+          isStored={storedCities.includes(guessingCity)}
           addHit={addHit}
           setShowModal={setShowModal}
           level={level}

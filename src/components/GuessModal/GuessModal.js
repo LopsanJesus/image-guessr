@@ -6,7 +6,7 @@ import "./GuessModal.css";
 
 import { getImageTranslations } from "../../data/cities";
 
-const GuessModal = ({ city, addHit, setShowModal, level, t }) => {
+const GuessModal = ({ city, addHit, setShowModal, level, isStored, t }) => {
   const modalInput = useRef(null);
   const [error, setError] = useState(false);
 
@@ -74,34 +74,39 @@ const GuessModal = ({ city, addHit, setShowModal, level, t }) => {
               </div>
             </div>
             <div className="bg-gray-50 px-4 py-4 sm:px-6 sm:flex sm:flex-row">
-              <input
-                type="text"
-                id="guess-input"
-                name="name"
-                maxLength="30"
-                size="20"
-                className={`uppercase w-full inline-flex justify-center rounded-md border shadow-sm px-4 mb-3 text-base font-medium text-black focus:outline-none sm:ml-3 sm:w-auto sm:text-sm ${
-                  error && "bg-red-400"
-                }`}
-                ref={modalInput}
-                onKeyUp={(e) => {
-                  if (e.key === "Enter") {
-                    checkGuess();
-                  }
-                }}
-                autoFocus
-                autoComplete="off"
-              />
-              <button
-                id="check-modal-button"
-                type="button"
-                className="xl:mb-3 w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:ml-3 sm:w-auto sm:text-sm"
-                onClick={() => {
-                  checkGuess();
-                }}
-              >
-                {t("Check")}
-              </button>
+              {!isStored && (
+                <>
+                  <input
+                    type="text"
+                    id="guess-input"
+                    name="name"
+                    maxLength="30"
+                    size="20"
+                    className={`uppercase w-full inline-flex justify-center rounded-md border shadow-sm px-4 mb-3 text-base font-medium text-black focus:outline-none sm:ml-3 sm:w-auto sm:text-sm ${
+                      error && "bg-red-400"
+                    }`}
+                    ref={modalInput}
+                    onKeyUp={(e) => {
+                      if (e.key === "Enter") {
+                        checkGuess();
+                      }
+                    }}
+                    autoFocus
+                    autoComplete="off"
+                  />
+
+                  <button
+                    id="check-modal-button"
+                    type="button"
+                    className="xl:mb-3 w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:ml-3 sm:w-auto sm:text-sm"
+                    onClick={() => {
+                      checkGuess();
+                    }}
+                  >
+                    {t("Check")}
+                  </button>
+                </>
+              )}
               <button
                 id="close-modal-button"
                 type="button"

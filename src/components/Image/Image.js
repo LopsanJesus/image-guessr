@@ -48,7 +48,7 @@ const Image = ({ image, isStored, onClick, t }) => {
           !isStored ? "" : "border-green-500"
         } border-4 rounded-lg`}
         alt={imageName}
-        onClick={!isStored ? () => onClick(imageName) : undefined}
+        onClick={() => onClick(imageName)}
       />
       {isStored && (
         <div

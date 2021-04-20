@@ -16,6 +16,7 @@ import AlertModal from "../AlertModal";
 import { getLevelCities, getNumberOfLevels } from "../../data/cities";
 import { withTranslation } from "react-i18next";
 import Footer from "../Footer";
+import CameraIcon from "../../assets/CameraIcon/CameraIcon";
 
 const Level = ({ t }) => {
   const params = useParams();
@@ -101,6 +102,11 @@ const Level = ({ t }) => {
                         key={image}
                         className="image-container relative inline-block text-center"
                       >
+                        <div className="absolute right-0 bg-green-500 rounded-lg">
+                          <div className="m-0.5">
+                            <CameraIcon />
+                          </div>
+                        </div>
                         <img
                           id={image}
                           src={"/img/" + image + ".jpg"}

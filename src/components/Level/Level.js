@@ -10,13 +10,12 @@ import {
   getLastLevelAchieved,
 } from "../../helpers/storage";
 import { SCORE_TO_UNLOCK_LEVEL } from "../../helpers/score";
-// import _ from "lodash";
 import GuessModal from "../GuessModal";
 import AlertModal from "../AlertModal";
 import { getLevelImages, getNumberOfLevels } from "../../data/cities";
 import { withTranslation } from "react-i18next";
 import Footer from "../Footer";
-import CameraIcon from "../../assets/CameraIcon/CameraIcon";
+import Image from "../Image/Image";
 
 const Level = ({ t }) => {
   const params = useParams();
@@ -96,43 +95,14 @@ const Level = ({ t }) => {
               >
                 {images.length > 0 ? (
                   images.map((image) => {
-                    let isStored = storedCities.includes(image);
+                    let isStored = storedCities.includes(image.image);
                     return (
-                      <div
-                        key={image}
-                        className="image-container relative inline-block text-center"
-                      >
-                        <div className="absolute right-0 bg-green-500 rounded-lg">
-                          <div className="m-0.5">
-                            <CameraIcon />
-                          </div>
-                        </div>
-                        <img
-                          id={image}
-                          src={"/img/" + image + ".jpg"}
-                          width="500"
-                          height="600"
-                          className={`image ${
-                            isStored
-                              ? "border-2 rounded-lg border-green-500"
-                              : "hover:opacity-75"
-                          }`}
-                          alt={image}
-                          onClick={
-                            !isStored
-                              ? () => handleImageClick(image)
-                              : undefined
-                          }
-                        />
-                        {isStored && (
-                          <div
-                            id={image + "text"}
-                            className="imagetext uppercase font-extrabold rounded-xl text-green-500 bg-white p-4 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-                          >
-                            {t(image.split("-").join(" ").toUpperCase())}
-                          </div>
-                        )}
-                      </div>
+                      <Image
+                        key={image.image}
+                        image={image}
+                        isStored={isStored}
+                        onClick={handleImageClick}
+                      />
                     );
                   })
                 ) : (

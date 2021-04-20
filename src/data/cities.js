@@ -164,6 +164,6 @@ export const getNumberOfLevels = () => {
 
 export const getLevelImages = (level) => {
   return images[level - 1].map((image) => {
-    return image.image;
+    return image;
   });
 };

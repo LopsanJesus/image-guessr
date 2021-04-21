@@ -12,6 +12,8 @@ const getIcon = (type) => {
       return <CountryIcon />;
     case "monument":
       return <MonumentIcon />;
+    default:
+      return <CityIcon />;
   }
 };
 
@@ -22,6 +24,8 @@ const getColor = (type) => {
     case "country":
       return "blue-300";
     case "monument":
+      return "pink-300";
+    default:
       return "pink-300";
   }
 };

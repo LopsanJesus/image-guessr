@@ -17,7 +17,7 @@ const Home = ({ t }) => {
           </h1>
         </div>
       </div>
-      <div className="">
+      <div className="cta-play-button">
         <Link
           to="/play"
           className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-4 px-10 rounded-lg"

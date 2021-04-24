@@ -3,7 +3,7 @@ describe('guessAnImage', () => {
   const cityName = 'Cordoba'
 
   it('user can click an image and type a word', () => {
-    cy.visit('localhost:3000/play/level/1')
+    cy.visit('/play/level/1')
 
     cy.get('.image').first().click()
 

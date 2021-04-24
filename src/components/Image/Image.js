@@ -20,13 +20,13 @@ const getIcon = (type) => {
 const getColor = (type) => {
   switch (type) {
     case "city":
-      return "yellow-300";
+      return "bg-yellow-300";
     case "country":
-      return "blue-300";
+      return "bg-blue-300";
     case "monument":
-      return "pink-300";
+      return "bg-pink-300";
     default:
-      return "pink-300";
+      return "bg-pink-300";
   }
 };
 
@@ -37,7 +37,7 @@ const Image = ({ imageType, imageName, isStored, onClick, t }) => {
     <div className="image-container relative inline-block text-center">
       <div
         className={`absolute left-0 rounded-lg ${
-          !isStored ? "bg-" + getColor(imageType) : "bg-green-500"
+          !isStored ? getColor(imageType) : "bg-green-500"
         }`}
       >
         <div className="m-0.5 p-2">{getIcon(imageType)}</div>
@@ -58,7 +58,12 @@ const Image = ({ imageType, imageName, isStored, onClick, t }) => {
           id={imageName + "text"}
           className="imagetext uppercase font-extrabold rounded-xl text-green-500 bg-white p-4 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
         >
-          {t(imageName.split("-").join(" ").toUpperCase())}
+          {t(
+            imageName
+              .split("-")
+              .join(" ")
+              .toUpperCase()
+          )}
         </div>
       )}
     </div>

@@ -1,6 +1,6 @@
 describe('navigateToLevel', () => {
   it('User can navigate to a level', () => {
-    cy.visit('localhost:3000')
+    cy.visit('localhost:3000/')
 
     cy.get('.cta-play-button').contains('PLAY').click()
 

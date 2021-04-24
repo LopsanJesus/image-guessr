@@ -1,6 +1,6 @@
 describe('guessAnImage', () => {
 
-  const cityName = 'Córdoba'
+  const cityName = 'Cordoba'
 
   it('user can click an image and type a word', () => {
     cy.visit('localhost:3000/play/level/1')
@@ -13,6 +13,8 @@ describe('guessAnImage', () => {
     cy.get('button').contains('Check').click()
 
 
-    cy.get('.imagetext').contains(cityName)
+    cy.contains('Score: 1')
+
+    cy.contains(cityName)
   })
 })

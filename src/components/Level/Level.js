@@ -49,7 +49,7 @@ const Level = ({ t }) => {
     storeItem(guessingCity.imageName, CITIES_PREFIX + level);
     setScore(score + 1);
     setShowModal(false);
-    setStoredCities([...storedCities, guessingCity]);
+    setStoredCities([...storedCities, guessingCity.imageName]);
 
     if (score + 1 === SCORE_TO_UNLOCK_LEVEL) {
       setShowAlertModal(true);

@@ -89,7 +89,7 @@ const GuessModal = ({
                     name="name"
                     maxLength="30"
                     size="20"
-                    className={`uppercase w-full justify-center rounded-md border shadow-sm px-4 py-2 sm:py-0 xl:py-0 mb-3 text-base font-medium text-black focus:outline-none sm:w-auto sm:text-sm sm:leading-10 ${
+                    className={`uppercase w-full justify-center rounded-md border shadow-sm px-4 py-2 sm:py-0 xl:py-0 mb-3 sm:mb-1 text-base font-medium text-black focus:outline-none sm:w-auto sm:text-sm sm:leading-10 ${
                       error ? "bg-red-400" : ""
                     }`}
                     ref={modalInput}
@@ -105,7 +105,7 @@ const GuessModal = ({
                   <button
                     id="check-modal-button"
                     type="button"
-                    className="mb-3 mt-3 w-full justify-center rounded-md border border-transparent shadow-sm px-4 py-2 sm:py-0 xl:py-0 bg-green-600 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:mt-0 sm:w-auto sm:text-sm"
+                    className="my-1 sm:my3 w-full justify-center rounded-md border border-transparent shadow-sm px-4 py-2 sm:py-0 xl:py-0 bg-green-600 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:mt-0 sm:w-auto sm:text-sm"
                     onClick={() => {
                       checkGuess();
                     }}
@@ -117,7 +117,7 @@ const GuessModal = ({
               <button
                 id="close-modal-button"
                 type="button"
-                className="mb-3 mt-3 w-full justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 sm:py-0 xl:py-0 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:w-auto sm:text-sm"
+               className="my-1 sm:my3 w-full justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 sm:py-0 xl:py-0 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:w-auto sm:text-sm"
                 onClick={() => {
                   setShowModal(false);
                 }}

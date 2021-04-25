@@ -11,11 +11,14 @@ const ScoreHeader = ({ level, score, nextLevelExists, t }) => {
   const nextLevel = parseInt(level) + 1;
 
   return (
-    <span className="font-bold text-2xl text-gray-900">
-      {`${t("Level")} ${level} | ${t("Score")}: `}
-      <span id="score">{score}/12</span>
+    <>
+      <span className="font-bold text-2xl text-gray-900">
+        {`${t("Level")} ${level} | ${t("Score")}: `}
+        <span id="score">{score}/12</span>
+      </span>
+
       {nextLevelExists && score >= SCORE_TO_UNLOCK_LEVEL && (
-        <div className="inline-block">
+        <div className="inline-block ml-10">
           <CTAButton
             text={"Level " + nextLevel}
             level={level}
@@ -25,7 +28,7 @@ const ScoreHeader = ({ level, score, nextLevelExists, t }) => {
           />
         </div>
       )}
-    </span>
+    </>
   );
 };
 

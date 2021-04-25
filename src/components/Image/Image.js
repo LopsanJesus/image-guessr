@@ -34,7 +34,10 @@ const Image = ({ imageType, imageName, isStored, onClick, t }) => {
   console.log(imageName);
 
   return (
-    <div className="image-container relative inline-block text-center">
+    <div
+      className="image-container relative inline-block text-center cursor-pointer"
+      onClick={() => onClick && onClick({ imageName, imageType })}
+    >
       <div
         className={`absolute left-0 rounded-lg ${
           !isStored ? getColor(imageType) : "bg-green-500"
@@ -47,11 +50,10 @@ const Image = ({ imageType, imageName, isStored, onClick, t }) => {
         src={"/img/" + imageName + ".jpg"}
         width="500"
         height="600"
-        className={`image max-h-96 cursor-pointer ${
+        className={`image max-h-96 ${
           !isStored ? "" : "border-green-500"
         } border-4 rounded-lg`}
         alt="ImageGuessr"
-        onClick={() => onClick && onClick({ imageName, imageType })}
       />
       {isStored && (
         <div

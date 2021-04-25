@@ -75,14 +75,14 @@ const GuessModal = ({
             <h3 className="font-bold text-center text-2xl text-gray-900 mt-4">
               {t(imageType)}
             </h3>
-            <div className="px-4 pt-5 sm:p-6 sm:pb-4">
+            <div className="px-4 pt-5 text-center sm:p-6 sm:pb-4">
               <Image
                 imageName={imageName}
                 imageType={imageType}
                 isStored={isStored}
               />
             </div>
-            <div className="px-4 py-4 sm:px-6 sm:flex sm:flex-row">
+            <div className="px-4 py-4 sm:px-6 sm:flex sm:flex-row sm:justify-center space-x-3">
               {!isStored && (
                 <>
                   <input
@@ -91,8 +91,8 @@ const GuessModal = ({
                     name="name"
                     maxLength="30"
                     size="20"
-                    className={`leading-10 uppercase w-full inline-flex justify-center rounded-md border shadow-sm px-4 mb-3 text-base font-medium text-black focus:outline-none sm:ml-3 sm:w-auto sm:text-sm ${
-                      error && "bg-red-400"
+                    className={`uppercase w-full justify-center rounded-md border shadow-sm px-4 xl:mb-3 text-base font-medium text-black focus:outline-none sm:w-auto sm:text-sm sm:leading-10 ${
+                      error ? "bg-red-400" : ""
                     }`}
                     ref={modalInput}
                     onKeyUp={(e) => {
@@ -107,7 +107,7 @@ const GuessModal = ({
                   <button
                     id="check-modal-button"
                     type="button"
-                    className="xl:mb-3 w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:ml-3 sm:w-auto sm:text-sm"
+                    className="xl:mb-3 w-full justify-center rounded-md border border-transparent shadow-sm px-4 bg-green-600 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:w-auto sm:text-sm"
                     onClick={() => {
                       checkGuess();
                     }}
@@ -119,7 +119,7 @@ const GuessModal = ({
               <button
                 id="close-modal-button"
                 type="button"
-                className="xl:mb-3 mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+                className="xl:mb-3 mt-3 w-full justify-center rounded-md border border-gray-300 shadow-sm px-4 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:w-auto sm:text-sm"
                 onClick={() => {
                   setShowModal(false);
                 }}

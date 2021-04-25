@@ -1,36 +1,15 @@
 import React from "react";
+import ImageTypeIcon from "../ImageTypeIcon";
 import { withTranslation } from "react-i18next";
-import CityIcon from "../../assets/CityIcon/CityIcon";
-import CountryIcon from "../../assets/CountryIcon/CountryIcon";
-import MonumentIcon from "../../assets/MonumentIcon/MonumentIcon";
 
-const getIcon = (type) => {
-  switch (type) {
-    case "city":
-      return <CityIcon />;
-    case "country":
-      return <CountryIcon />;
-    case "monument":
-      return <MonumentIcon />;
-    default:
-      return <CityIcon />;
-  }
-};
-
-const getColor = (type) => {
-  switch (type) {
-    case "city":
-      return "bg-yellow-300";
-    case "country":
-      return "bg-blue-300";
-    case "monument":
-      return "bg-pink-300";
-    default:
-      return "bg-pink-300";
-  }
-};
-
-const Image = ({ imageType, imageName, isStored, onClick, t }) => {
+const Image = ({
+  imageType,
+  imageName,
+  isStored,
+  onClick,
+  t,
+  showTypeInHeader,
+}) => {
   console.log(imageName);
 
   return (
@@ -38,13 +17,18 @@ const Image = ({ imageType, imageName, isStored, onClick, t }) => {
       className="image-container relative inline-block text-center cursor-pointer"
       onClick={() => onClick && onClick({ imageName, imageType })}
     >
-      <div
-        className={`absolute left-0 rounded-lg ${
-          !isStored ? getColor(imageType) : "bg-green-500"
-        }`}
-      >
-        <div className="m-0.5 p-2">{getIcon(imageType)}</div>
-      </div>
+      {showTypeInHeader && (
+        <h3 className="font-bold text-center text-2xl text-gray-900 my-4">
+          <ImageTypeIcon imageType={imageType} isStored={isStored} />
+          {t(imageType)}
+        </h3>
+      )}
+
+      {!showTypeInHeader && (
+        <div className="absolute left-0">
+          <ImageTypeIcon imageType={imageType} isStored={isStored} />
+        </div>
+      )}
       <img
         id={imageName}
         src={"/img/" + imageName + ".jpg"}

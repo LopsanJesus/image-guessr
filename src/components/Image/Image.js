@@ -2,6 +2,19 @@ import React from "react";
 import ImageTypeIcon from "../ImageTypeIcon";
 import { withTranslation } from "react-i18next";
 
+const getBorderColor = (type) => {
+  switch (type) {
+    case "city":
+      return "border-yellow-300";
+    case "country":
+      return "border-blue-300";
+    case "monument":
+      return "border-pink-300";
+    default:
+      return "border-pink-300";
+  }
+};
+
 const Image = ({
   imageType,
   imageName,
@@ -18,7 +31,7 @@ const Image = ({
       onClick={() => onClick && onClick({ imageName, imageType })}
     >
       {showTypeInHeader && (
-        <h2 className="w-6/12 m-auto">
+        <h2 className="w-5/12 m-auto">
           <ImageTypeIcon
             imageType={imageType}
             isStored={isStored}
@@ -38,7 +51,11 @@ const Image = ({
         width="500"
         height="600"
         className={`image max-h-96 ${
-          !isStored ? "" : "border-green-500"
+          !isStored
+            ? showTypeInHeader
+              ? getBorderColor(imageType)
+              : ""
+            : "border-green-500"
         } border-4 rounded-lg`}
         alt="ImageGuessr"
       />

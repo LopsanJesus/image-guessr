@@ -33,7 +33,7 @@ const getIcon = (type) => {
 const ImageTypeIcon = ({ imageType, isStored, text }) => {
   return (
     <div
-      className={`rounded-lg flex flex-row justify-center ${
+      className={`${text ? "rounded-t-lg": "rounded-lg"} flex flex-row justify-center ${
         !isStored ? getColor(imageType) : "bg-green-500"
       }`}
     >

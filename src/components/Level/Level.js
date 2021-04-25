@@ -88,32 +88,20 @@ const Level = ({ t }) => {
         <div className="px-4 sm:px-8 lg:px-16 xl:px-20 mx-auto">
           <div className="hero">
             <div className="hero-headline flex flex-col items-center justify-center pt-2 pb-2 text-center">
-              <div
-                className="cursor-pointer m-3"
-                onClick={handleInfoButtonClick}
-              >
-                <InfoIcon />
-              </div>
-              <h1 className="font-bold text-3xl text-gray-900 m-2">
-                {t("Guess each city")}
-              </h1>
-
-              <h1 className="sticky bg-gray-100 z-30 w-full py-2 score">
+              <h1 className="sticky bg-gray-100 z-30 w-full py-4 score flex flex-row justify-center items-center">
                 <ScoreHeader
                   level={level}
                   score={score}
                   nextLevelExists={nextLevelExists}
                 />
-              </h1>
-              {getNumberOfLevels() !== parseInt(level) && (
-                <p
-                  id="goal-message"
-                  className="font-base text-base text-gray-600 my-2 mb-4"
+
+                <span
+                  className="cursor-pointer ml-10"
+                  onClick={handleInfoButtonClick}
                 >
-                  {t("Achieve 10 points to unlock level")} {parseInt(level) + 1}
-                  .
-                </p>
-              )}
+                  <InfoIcon />
+                </span>
+              </h1>
               <section
                 id="photos"
                 className="grid grid-cols-1 md:grid-cols-4 gap-4"

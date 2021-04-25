@@ -14,11 +14,11 @@ const ScoreHeader = ({ level, score, nextLevelExists, t }) => {
     <>
       <span className="font-bold text-2xl text-gray-900">
         {`${t("Level")} ${level} | ${t("Score")}: `}
-        <span id="score">{score}/12</span>
+        <span id="score">{score} / 12</span>
       </span>
 
       {nextLevelExists && score >= SCORE_TO_UNLOCK_LEVEL && (
-        <div className="inline-block ml-10">
+        <div className="ml-10">
           <CTAButton
             text={"Level " + nextLevel}
             level={level}

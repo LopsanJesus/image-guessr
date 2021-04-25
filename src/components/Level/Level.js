@@ -23,6 +23,7 @@ import InfoModal from "../InfoModal/InfoModal";
 const Level = ({ t }) => {
   const params = useParams();
   const [level, setLevel] = useState(params.level);
+  const [scrollPosition, setScrollPosition] = useState(window.pageYOffset);
 
   const [storedCities, setStoredCities] = useState(
     getStoredArray(CITIES_PREFIX + level)
@@ -51,10 +52,15 @@ const Level = ({ t }) => {
 
   const nextLevelExists = getNumberOfLevels() !== parseInt(level);
 
+  const onGuessModalClose = () => {
+    setShowModal(false);
+    window.scrollTo(0, scrollPosition);
+  };
+
   const addHit = () => {
     storeItem(guessingCity.imageName, CITIES_PREFIX + level);
     setScore(score + 1);
-    setShowModal(false);
+    onGuessModalClose();
     setStoredCities([...storedCities, guessingCity.imageName]);
 
     if (score + 1 === SCORE_TO_UNLOCK_LEVEL) {
@@ -73,6 +79,7 @@ const Level = ({ t }) => {
 
   const handleImageClick = ({ imageName, imageType }) => {
     setGuessingCity({ imageName, imageType });
+    setScrollPosition(window.pageYOffset);
     setShowModal(true);
 
     ReactGA.event({
@@ -142,7 +149,9 @@ const Level = ({ t }) => {
           imageName={guessingCity.imageName}
           imageType={guessingCity.imageType}
           addHit={addHit}
-          setShowModal={setShowModal}
+          onCloseModal={() => {
+            onGuessModalClose();
+          }}
           level={level}
           isStored={storedCities.includes(guessingCity.imageName)}
         />

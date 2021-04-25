@@ -16,6 +16,8 @@ import { getLevelImages, getNumberOfLevels } from "../../data/cities";
 import { withTranslation } from "react-i18next";
 import Footer from "../Footer";
 import Image from "../Image/Image";
+import InfoIcon from "../../assets/InfoIcon/InfoIcon";
+import InfoModal from "../InfoModal/InfoModal";
 
 const Level = ({ t }) => {
   const params = useParams();
@@ -34,6 +36,7 @@ const Level = ({ t }) => {
     }
   }, [params, level]);
 
+  const [showInfoModal, setShowInfoModal] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [showAlertModal, setShowAlertModal] = useState(false);
   const [guessingCity, setGuessingCity] = useState({});
@@ -56,6 +59,15 @@ const Level = ({ t }) => {
     }
   };
 
+  const handleInfoButtonClick = () => {
+    setShowInfoModal(true);
+    ReactGA.event({
+      category: "Info",
+      action: "Info button clicked",
+      label: "Info clicked in level: " + level,
+    });
+  };
+
   const handleImageClick = ({ imageName, imageType }) => {
     setGuessingCity({ imageName, imageType });
     setShowModal(true);
@@ -73,6 +85,12 @@ const Level = ({ t }) => {
         <div className="px-4 sm:px-8 lg:px-16 xl:px-20 mx-auto">
           <div className="hero">
             <div className="hero-headline flex flex-col items-center justify-center pt-2 pb-2 text-center">
+              <div
+                className="cursor-pointer m-3"
+                onClick={handleInfoButtonClick}
+              >
+                <InfoIcon />
+              </div>
               <h1 className="font-bold text-3xl text-gray-900 m-2">
                 {t("Guess each city")}
               </h1>
@@ -83,7 +101,7 @@ const Level = ({ t }) => {
               {getNumberOfLevels() !== parseInt(level) && (
                 <p
                   id="goal-message"
-                  className="font-base text-base text-gray-600 my-2"
+                  className="font-base text-base text-gray-600 my-2 mb-4"
                 >
                   {t("Achieve 10 points to unlock level")} {parseInt(level) + 1}
                   .
@@ -117,6 +135,10 @@ const Level = ({ t }) => {
         </div>
         <Footer />
       </div>
+
+      {showInfoModal && (
+        <InfoModal setShowModal={setShowInfoModal} level={level} />
+      )}
 
       {showModal && (
         <GuessModal

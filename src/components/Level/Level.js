@@ -12,6 +12,7 @@ import {
 import { SCORE_TO_UNLOCK_LEVEL } from "../../helpers/score";
 import GuessModal from "../GuessModal";
 import AlertModal from "../AlertModal";
+import ScoreHeader from "../ScoreHeader";
 import { getLevelImages, getNumberOfLevels } from "../../data/cities";
 import { withTranslation } from "react-i18next";
 import Footer from "../Footer";
@@ -47,6 +48,8 @@ const Level = ({ t }) => {
     return <Redirect to="/play" />;
 
   var images = getLevelImages(level);
+
+  const nextLevelExists = getNumberOfLevels() !== parseInt(level);
 
   const addHit = () => {
     storeItem(guessingCity.imageName, CITIES_PREFIX + level);
@@ -94,9 +97,13 @@ const Level = ({ t }) => {
               <h1 className="font-bold text-3xl text-gray-900 m-2">
                 {t("Guess each city")}
               </h1>
-              <h1 className="sticky bg-gray-300 z-30 w-full font-bold text-2xl text-gray-900 py-2 score">
-                {`${t("Level")} ${level} | ${t("Score")}: `}
-                <span id="score">{score}</span>
+
+              <h1 className="sticky bg-gray-100 z-30 w-full py-2 score">
+                <ScoreHeader
+                  level={level}
+                  score={score}
+                  nextLevelExists={nextLevelExists}
+                />
               </h1>
               {getNumberOfLevels() !== parseInt(level) && (
                 <p

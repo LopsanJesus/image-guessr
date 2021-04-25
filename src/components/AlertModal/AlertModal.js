@@ -2,6 +2,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import ReactGA from "react-ga";
 import ShareButtons from "../ShareButtons/ShareButtons";
+import CTAButton from "../CTAButton/CTAButton";
 
 import { withTranslation } from "react-i18next";
 
@@ -39,22 +40,21 @@ const AlertModal = ({ level, setShowModal, t }) => {
               </div>
             </div>
             <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row">
-              <button
-                id="go-modal-level-button"
-                type="button"
-                className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:ml-3 sm:w-auto sm:text-sm"
-                onClick={() => {
-                  setShowModal(false);
-                  ReactGA.event({
-                    category: "Modal new level unlocked",
-                    action: "Navigate to new level",
-                    label: "to -> level " + (parseInt(level) + 1),
-                  });
-                  history.push("/play/level/" + (parseInt(level) + 1));
-                }}
-              >
-                {t("Go")}
-              </button>
+              <div className="inline-flex w-full ">
+                <CTAButton
+                  text={t("Go")}
+                  level={level}
+                  onClick={() => {
+                    setShowModal(false);
+                    ReactGA.event({
+                      category: "Modal new level unlocked",
+                      action: "Navigate to new level",
+                      label: "to -> level " + (parseInt(level) + 1),
+                    });
+                    history.push("/play/level/" + (parseInt(level) + 1));
+                  }}
+                />
+              </div>
               <button
                 id="close-modal-level-button"
                 type="button"

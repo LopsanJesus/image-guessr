@@ -96,7 +96,7 @@ const Level = ({ t }) => {
                 />
 
                 <span
-                  className="cursor-pointer ml-10"
+                  className="cursor-pointer ml-4"
                   onClick={handleInfoButtonClick}
                 >
                   <InfoIcon />

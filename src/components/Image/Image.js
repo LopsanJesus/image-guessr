@@ -1,5 +1,6 @@
 import React from "react";
 import ImageTypeIcon from "../ImageTypeIcon";
+import CheckIcon from "../../assets/CheckIcon/CheckIcon";
 import { withTranslation } from "react-i18next";
 
 const getBorderColor = (type) => {
@@ -13,6 +14,15 @@ const getBorderColor = (type) => {
     default:
       return "border-pink-300";
   }
+};
+
+const cityNameToString = (imageName, t) => {
+  return t(
+    imageName
+      .split("-")
+      .join(" ")
+      .toUpperCase()
+  );
 };
 
 const Image = ({
@@ -59,18 +69,20 @@ const Image = ({
         } border-4 rounded-lg`}
         alt="ImageGuessr"
       />
-      {isStored && (
+      {isStored && !showTypeInHeader && (
         <div
           id={imageName + "text"}
           className="imagetext uppercase font-extrabold rounded-xl text-green-500 bg-white p-4 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
         >
-          {t(
-            imageName
-              .split("-")
-              .join(" ")
-              .toUpperCase()
-          )}
+          {cityNameToString(imageName, t)}
         </div>
+      )}
+
+      {isStored && showTypeInHeader && (
+        <h2 className="uppercase font-extrabold text-green-500 pt-4 flex flex-row justify-center">
+          <span className="mr-2">{cityNameToString(imageName, t)}</span>
+          <CheckIcon />
+        </h2>
       )}
     </div>
   );

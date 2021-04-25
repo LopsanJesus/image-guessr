@@ -12,15 +12,12 @@ const ScoreHeader = ({ level, score, nextLevelExists, t }) => {
 
   return (
     <>
-      <span className="font-bold text-2xl text-gray-900">
-        {`${t("Level")} ${level}`}
-      </span>
       <span className="text-1xl text-gray-600 ml-4">{score} / 12</span>
 
       {nextLevelExists && score >= SCORE_TO_UNLOCK_LEVEL && (
         <div className="ml-5">
           <CTAButton
-            text={"Level " + nextLevel}
+            text={t("Next level")}
             level={level}
             onClick={() => {
               history.push("/play/level/" + nextLevel);

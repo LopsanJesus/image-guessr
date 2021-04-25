@@ -88,19 +88,21 @@ const Level = ({ t }) => {
         <div className="px-4 sm:px-8 lg:px-16 xl:px-20 mx-auto">
           <div className="hero">
             <div className="hero-headline flex flex-col items-center justify-center pt-2 pb-2 text-center">
-              <h1 className="sticky bg-gray-100 z-30 w-full py-4 score flex flex-row justify-center items-center">
-                <ScoreHeader
-                  level={level}
-                  score={score}
-                  nextLevelExists={nextLevelExists}
-                />
-
+              <span className="font-bold text-2xl text-gray-900">
+                {`${t("Level")} ${level}`}
+              </span>
+              <h1 className="sticky bg-gray-100 z-30 w-full py-4 score flex flex-row items-center justify-center px-4">
                 <span
                   className="cursor-pointer ml-4"
                   onClick={handleInfoButtonClick}
                 >
                   <InfoIcon />
                 </span>
+                <ScoreHeader
+                  level={level}
+                  score={score}
+                  nextLevelExists={nextLevelExists}
+                />
               </h1>
               <section
                 id="photos"

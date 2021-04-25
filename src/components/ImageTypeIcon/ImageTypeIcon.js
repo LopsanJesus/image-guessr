@@ -30,13 +30,20 @@ const getIcon = (type) => {
   }
 };
 
-const ImageTypeIcon = ({ imageType , isStored}) => {
+const ImageTypeIcon = ({ imageType, isStored, text }) => {
   return (
-    <div className={`rounded-lg ${
+    <div
+      className={`rounded-lg flex flex-row justify-center ${
         !isStored ? getColor(imageType) : "bg-green-500"
       }`}
     >
-      <div className="m-0.5 p-2">{getIcon(imageType)}</div>
+      <div className={`p-2 flex items-center flex-grow-0 ${text ? "ml-3" : ""} `}>{getIcon(imageType)}</div>
+
+      {text && (
+        <span className="font-bold text-2xl text-white my-4 mr-4 flex-grow">
+          {text}
+        </span>
+      )}
     </div>
   );
 };

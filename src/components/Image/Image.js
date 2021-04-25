@@ -18,10 +18,13 @@ const Image = ({
       onClick={() => onClick && onClick({ imageName, imageType })}
     >
       {showTypeInHeader && (
-        <h3 className="font-bold text-center text-2xl text-gray-900 my-4">
-          <ImageTypeIcon imageType={imageType} isStored={isStored} />
-          {t(imageType)}
-        </h3>
+        <h2 className="w-6/12 m-auto">
+          <ImageTypeIcon
+            imageType={imageType}
+            isStored={isStored}
+            text={t(imageType)}
+          />
+        </h2>
       )}
 
       {!showTypeInHeader && (

@@ -13,7 +13,7 @@ describe('guessAnImage', () => {
     cy.get('button').contains('Check').click()
 
 
-    cy.contains('Score: 1')
+    cy.contains('1 / 12')
 
     cy.contains(cityName)
   })

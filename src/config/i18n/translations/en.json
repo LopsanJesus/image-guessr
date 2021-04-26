@@ -1,10 +1,8 @@
 {
   "translation": {
     "ImageGuessr": "ImageGuessr",
-    "Guess each city": "Guess each city",
     "Levels": "Levels",
     "Level": "Level",
-    "Score": "Score",
     "More levels coming soon...": "More levels coming soon...",
     "Achieve 10 points to unlock level": "Achieve 10 points to unlock level",
     "You unlocked level": "You unlocked level ",
@@ -15,6 +13,7 @@
     "No images were found": "No images were found",
     "Play with your friends": "Play with your friends!",
     "Link copied to clipboard": "Link copied to clipboard",
+    "Next level": "Next level",
 
     "city": "City",
     "country": "Country",

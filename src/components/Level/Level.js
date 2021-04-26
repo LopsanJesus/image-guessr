@@ -12,6 +12,7 @@ import {
 import { SCORE_TO_UNLOCK_LEVEL } from "../../helpers/score";
 import GuessModal from "../GuessModal";
 import AlertModal from "../AlertModal";
+import ScoreHeader from "../ScoreHeader";
 import { getLevelImages, getNumberOfLevels } from "../../data/cities";
 import { withTranslation } from "react-i18next";
 import Footer from "../Footer";
@@ -22,6 +23,7 @@ import InfoModal from "../InfoModal/InfoModal";
 const Level = ({ t }) => {
   const params = useParams();
   const [level, setLevel] = useState(params.level);
+  const [scrollPosition, setScrollPosition] = useState(window.pageYOffset);
 
   const [storedCities, setStoredCities] = useState(
     getStoredArray(CITIES_PREFIX + level)
@@ -48,10 +50,17 @@ const Level = ({ t }) => {
 
   var images = getLevelImages(level);
 
+  const nextLevelExists = getNumberOfLevels() !== parseInt(level);
+
+  const onGuessModalClose = () => {
+    setShowModal(false);
+    window.scrollTo(0, scrollPosition);
+  };
+
   const addHit = () => {
     storeItem(guessingCity.imageName, CITIES_PREFIX + level);
     setScore(score + 1);
-    setShowModal(false);
+    onGuessModalClose();
     setStoredCities([...storedCities, guessingCity.imageName]);
 
     if (score + 1 === SCORE_TO_UNLOCK_LEVEL) {
@@ -70,6 +79,7 @@ const Level = ({ t }) => {
 
   const handleImageClick = ({ imageName, imageType }) => {
     setGuessingCity({ imageName, imageType });
+    setScrollPosition(window.pageYOffset);
     setShowModal(true);
 
     ReactGA.event({
@@ -85,28 +95,22 @@ const Level = ({ t }) => {
         <div className="px-4 sm:px-8 lg:px-16 xl:px-20 mx-auto">
           <div className="hero">
             <div className="hero-headline flex flex-col items-center justify-center pt-2 pb-2 text-center">
-              <div
-                className="cursor-pointer m-3"
-                onClick={handleInfoButtonClick}
-              >
-                <InfoIcon />
-              </div>
-              <h1 className="font-bold text-3xl text-gray-900 m-2">
-                {t("Guess each city")}
-              </h1>
-              <h1 className="sticky bg-gray-300 z-30 w-full font-bold text-2xl text-gray-900 py-2 score">
-                {`${t("Level")} ${level} | ${t("Score")}: `}
-                <span id="score">{score}</span>
-              </h1>
-              {getNumberOfLevels() !== parseInt(level) && (
-                <p
-                  id="goal-message"
-                  className="font-base text-base text-gray-600 my-2 mb-4"
+              <span className="font-bold text-2xl text-gray-900">
+                {`${t("Level")} ${level}`}
+              </span>
+              <h1 className="sticky bg-gray-100 z-30 w-full py-4 score flex flex-row items-center justify-center px-4">
+                <span
+                  className="cursor-pointer ml-4"
+                  onClick={handleInfoButtonClick}
                 >
-                  {t("Achieve 10 points to unlock level")} {parseInt(level) + 1}
-                  .
-                </p>
-              )}
+                  <InfoIcon />
+                </span>
+                <ScoreHeader
+                  level={level}
+                  score={score}
+                  nextLevelExists={nextLevelExists}
+                />
+              </h1>
               <section
                 id="photos"
                 className="grid grid-cols-1 md:grid-cols-4 gap-4"
@@ -145,7 +149,9 @@ const Level = ({ t }) => {
           imageName={guessingCity.imageName}
           imageType={guessingCity.imageType}
           addHit={addHit}
-          setShowModal={setShowModal}
+          onCloseModal={() => {
+            onGuessModalClose();
+          }}
           level={level}
           isStored={storedCities.includes(guessingCity.imageName)}
         />

@@ -152,6 +152,91 @@ const images = [
       translations: ["marrakesh", "marrakech"],
     },
   ],
+  [
+    { image: "canada", type: "country", translations: ["canada", "canadá"] },
+    {
+      image: "louvre",
+      type: "monument",
+      translations: ["louvre", "museo del louvre", "louvre museé"],
+    },
+    { image: "kiev", type: "city", translations: ["kiev"] },
+    {
+      image: "thailand",
+      type: "country",
+      translations: ["tailandia", "thailand"],
+    },
+    {
+      image: "niagara",
+      type: "monument",
+      translations: [
+        "niagara falls",
+        "niagara en bicicleta",
+        "niagara",
+        "las cataratas del niagara",
+        "cataratas del niagara",
+      ],
+    },
+    { image: "kyoto", type: "city", translations: ["kioto", "kyoto"] },
+    {
+      image: "palmar-troya",
+      type: "city",
+      translations: ["palmar de troya", "palmar"],
+    },
+    { image: "poland", type: "country", translations: ["polonia", "poland"] },
+    {
+      image: "chichen-itza",
+      type: "monument",
+      translations: ["chichen itza", "chichen itzá"],
+    },
+    { image: "italia", type: "country", translations: ["italia", "italy"] },
+    {
+      image: "santiago-bernabeu",
+      type: "monument",
+      translations: [
+        "santiago bernabeu",
+        "santiago bernabéu",
+        "bernabeu",
+        "bernabéu",
+      ],
+    },
+    { image: "london-eye", type: "monument", translations: ["london eye"] },
+  ],
+  [
+    { image: "bolivia", type: "country", translations: ["bolivia"] },
+    {
+      image: "machu-picchu",
+      type: "monument",
+      translations: ["machu pichu", "machu picchu"],
+    },
+    { image: "spain", type: "country", translations: ["españa", "spain"] },
+    { image: "chicago", type: "city", translations: ["chicago"] },
+    {
+      image: "sacre-coeur",
+      type: "monument",
+      translations: ["sacre coeur", "sacré coeur"],
+    },
+    { image: "pyongyang", type: "city", translations: ["pyongyang"] },
+    { image: "notre-dame", type: "monument", translations: ["notre dame"] },
+    {
+      image: "easter-island",
+      type: "monument",
+      translations: [
+        "easter island",
+        "moais",
+        "isla de pascua",
+        "moais de la isla de pascua",
+        "moais isla de pascua",
+      ],
+    },
+    { image: "medellin", type: "city", translations: ["medellin", "medellín"] },
+    { image: "china", type: "country", translations: ["china"] },
+    {
+      image: "allianz-arena",
+      type: "monument",
+      translations: ["allianz arena"],
+    },
+    { image: "gibraltar", type: "city", translations: ["gibraltar"] },
+  ],
 ];
 
 export const getImageTranslations = (level, image) => {

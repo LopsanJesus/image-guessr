@@ -9,6 +9,6 @@ describe('navigateToLevel', () => {
 
     cy.get('#level-1').click()
 
-    cy.get('h1').contains('Level 1')
+    cy.contains('Level 1')
   })
 })

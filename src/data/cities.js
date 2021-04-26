@@ -237,6 +237,67 @@ const images = [
     },
     { image: "gibraltar", type: "city", translations: ["gibraltar"] },
   ],
+  [
+    {
+      image: "belem-tower",
+      type: "monument",
+      translations: ["torre de belen", "torre de belem"],
+    },
+    { image: "cadiz", type: "city", translations: ["cádiz", "cadiz"] },
+    { image: "dubai", type: "city", translations: ["dubai", "dubái"] },
+    { image: "nepal", type: "country", translations: ["nepal"] },
+    {
+      image: "mount-rushmore",
+      type: "monument",
+      translations: ["monte rushmore", "mount rushmore"],
+    },
+    {
+      image: "sphinx",
+      type: "monument",
+      translations: [
+        "esfinge de giza",
+        "esfinge",
+        "la esfinge",
+        "the sphinx",
+        "sphinx",
+        "sphinx of giza",
+        "great sphinx of giza",
+      ],
+    },
+    {
+      image: "usa",
+      type: "country",
+      translations: [
+        "usa",
+        "eeuu",
+        "estados unidos",
+        "united states",
+        "united states of america",
+      ],
+    },
+    { image: "shangai", type: "city", translations: ["shangai", "shangái"] },
+    { image: "dubrovnik", type: "city", translations: ["dubrovnik"] },
+    {
+      image: "saint-peters-square",
+      type: "monument",
+      translations: [
+        "plaza de san pedro",
+        "saint peters square",
+        "san pedro",
+        "plaza de san pedro",
+      ],
+    },
+    {
+      image: "netherlands",
+      type: "country",
+      translations: ["holanda", "netherlands", "paises bajos", "países bajos"],
+    },
+    {
+      image: "valparaiso",
+      type: "city",
+      translations: ["valparaiso", "valparaíso"],
+    },
+  ],
 ];
 
 export const getImageTranslations = (level, image) => {

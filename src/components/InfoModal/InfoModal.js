@@ -8,6 +8,7 @@ import CountryIcon, {
 import MonumentIcon, {
   MonumentIconColor,
 } from "../../assets/MonumentIcon/MonumentIcon";
+import InfoIcon from "../../assets/InfoIcon/InfoIcon";
 
 const InfoModal = ({ onCloseInfoModal, level, t }) => {
   const renderListItem = (icon, text, color) => {
@@ -43,6 +44,12 @@ const InfoModal = ({ onCloseInfoModal, level, t }) => {
             <div className="bg-gray-50 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
               <div className="sm:flex sm:items-start">
                 <ul>
+                  <li className="mb-8">
+                    <div className="text-center text-xl m-5 flex flex-row items-center justify-center">
+                      <InfoIcon />
+                      <span className="ml-2">{t("Info")}</span>
+                    </div>
+                  </li>
                   {parseInt(level) === 5 && (
                     <li>
                       <div className="text-center text-xl font-bold m-5">

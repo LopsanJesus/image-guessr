@@ -110,9 +110,9 @@ const Level = ({ t }) => {
               <span className="font-bold text-2xl text-gray-900">
                 {`${t("Level")} ${level}`}
               </span>
-              <h1 className="sticky bg-gray-100 z-30 w-full py-4 score flex flex-row items-center justify-center px-4">
+              <h1 className="sticky bg-gray-100 z-30 w-full py-4 score flex flex-row justify-between items-center px-2">
                 <span
-                  className="cursor-pointer ml-4"
+                  className="cursor-pointer"
                   onClick={handleInfoButtonClick}
                 >
                   <InfoIcon />

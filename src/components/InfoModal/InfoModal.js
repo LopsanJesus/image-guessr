@@ -1,11 +1,25 @@
 import React from "react";
 
 import { withTranslation } from "react-i18next";
-import CityIcon from "../../assets/CityIcon/CityIcon";
-import CountryIcon from "../../assets/CountryIcon/CountryIcon";
-import MonumentIcon from "../../assets/MonumentIcon/MonumentIcon";
+import CityIcon, { CityIconColor } from "../../assets/CityIcon/CityIcon";
+import CountryIcon, {
+  CountryIconColor,
+} from "../../assets/CountryIcon/CountryIcon";
+import MonumentIcon, {
+  MonumentIconColor,
+} from "../../assets/MonumentIcon/MonumentIcon";
 
 const InfoModal = ({ onCloseInfoModal, level, t }) => {
+  const renderListItem = (icon, text, color) => {
+    return (
+      <li className="m-4">
+        <div className={`inline-block rounded-lg ${color}`}>
+          <div className="m-0.5 p-0.5">{icon}</div>
+        </div>
+        <span className="absolute p-2">{text}</span>
+      </li>
+    );
+  };
   return (
     <div id="modal-guess">
       <div className="fixed z-30 inset-0 overflow-y-auto">
@@ -41,34 +55,25 @@ const InfoModal = ({ onCloseInfoModal, level, t }) => {
                         (parseInt(level) + 1)}
                     </div>
                   </li>
-                  <li className="m-4">
-                    <div className="inline-block rounded-lg bg-yellow-500">
-                      <div className="m-0.5 p-0.5">
-                        <CityIcon />
-                      </div>
-                    </div>
-                    <span className="absolute p-2">{t("Guess the city")}</span>
-                  </li>
-                  <li className="m-4">
-                    <div className="inline-block rounded-lg bg-blue-500">
-                      <div className="m-0.5 p-0.5">
-                        <CountryIcon />
-                      </div>
-                    </div>
-                    <span className="absolute p-2">
-                      {t("Guess the country")}
-                    </span>
-                  </li>
-                  <li className="m-4">
-                    <div className="inline-block rounded-lg bg-pink-500">
-                      <div className="m-0.5 p-0.5">
-                        <MonumentIcon />
-                      </div>
-                    </div>
-                    <span className="absolute p-2">
-                      {t("Guess the monument")}
-                    </span>
-                  </li>
+                  {renderListItem(
+                    <CityIcon />,
+                    t("Guess the city"),
+                    CityIconColor
+                  )}
+                  {parseInt(level) > 4 && (
+                    <>
+                      {renderListItem(
+                        <CountryIcon />,
+                        t("Guess the country"),
+                        CountryIconColor
+                      )}
+                      {renderListItem(
+                        <MonumentIcon />,
+                        t("Guess the monument"),
+                        MonumentIconColor
+                      )}
+                    </>
+                  )}
                 </ul>
               </div>
             </div>

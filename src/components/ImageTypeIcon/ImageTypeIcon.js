@@ -1,19 +1,23 @@
 import React from "react";
 
-import CityIcon from "../../assets/CityIcon/CityIcon";
-import CountryIcon from "../../assets/CountryIcon/CountryIcon";
-import MonumentIcon from "../../assets/MonumentIcon/MonumentIcon";
+import CityIcon, { CityIconColor } from "../../assets/CityIcon/CityIcon";
+import CountryIcon, {
+  CountryIconColor,
+} from "../../assets/CountryIcon/CountryIcon";
+import MonumentIcon, {
+  MonumentIconColor,
+} from "../../assets/MonumentIcon/MonumentIcon";
 
 const getColor = (type) => {
   switch (type) {
     case "city":
-      return "bg-yellow-300";
+      return CityIconColor;
     case "country":
-      return "bg-blue-300";
+      return CountryIconColor;
     case "monument":
-      return "bg-pink-300";
+      return MonumentIconColor;
     default:
-      return "bg-pink-300";
+      return CityIconColor;
   }
 };
 
@@ -33,11 +37,17 @@ const getIcon = (type) => {
 const ImageTypeIcon = ({ imageType, isStored, text }) => {
   return (
     <div
-      className={`${text ? "rounded-t-lg": "rounded-lg"} flex flex-row justify-center ${
+      className={`${
+        text ? "rounded-t-lg" : "rounded-lg"
+      } flex flex-row justify-center ${
         !isStored ? getColor(imageType) : "bg-green-500"
       }`}
     >
-      <div className={`p-2 flex items-center flex-grow-0 ${text ? "ml-3" : ""} `}>{getIcon(imageType)}</div>
+      <div
+        className={`p-2 flex items-center flex-grow-0 ${text ? "ml-3" : ""} `}
+      >
+        {getIcon(imageType)}
+      </div>
 
       {text && (
         <span className="font-bold text-2xl text-white my-4 mr-4 flex-grow">

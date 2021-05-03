@@ -1,5 +1,7 @@
 import React from "react";
 
+export const CityIconColor = "bg-yellow-300";
+
 const CityIcon = () => {
   return (
     <svg

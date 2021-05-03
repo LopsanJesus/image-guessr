@@ -1,5 +1,7 @@
 import React from "react";
 
+export const MonumentIconColor = "bg-pink-300";
+
 const MonumentIcon = () => {
   return (
     <svg

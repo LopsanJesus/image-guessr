@@ -180,7 +180,13 @@ const images = [
     {
       image: "palmar-troya",
       type: "city",
-      translations: ["palmar de troya", "palmar"],
+      translations: [
+        "palmar de troya",
+        "palmar",
+        "el palmar de troya",
+        "palmar troya",
+        "el palmar",
+      ],
     },
     { image: "poland", type: "country", translations: ["polonia", "poland"] },
     {
@@ -275,7 +281,11 @@ const images = [
         "united states of america",
       ],
     },
-    { image: "shangai", type: "city", translations: ["shangai", "shangái"] },
+    {
+      image: "shanghai",
+      type: "city",
+      translations: ["shanghai", "shangái", "shangai"],
+    },
     { image: "dubrovnik", type: "city", translations: ["dubrovnik"] },
     {
       image: "saint-peters-square",

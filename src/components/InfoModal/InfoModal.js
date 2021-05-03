@@ -43,13 +43,15 @@ const InfoModal = ({ onCloseInfoModal, level, t }) => {
             <div className="bg-gray-50 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
               <div className="sm:flex sm:items-start">
                 <ul>
+                  {parseInt(level) === 5 && (
+                    <li>
+                      <div className="text-center text-xl font-bold m-5">
+                        {t("New type of images unlocked!")}
+                      </div>
+                    </li>
+                  )}
                   <li>
-                    <div className="text-center text-xl font-bold m-5">
-                      {t("Info Level") + " " + level}
-                    </div>
-                  </li>
-                  <li>
-                    <div className="text-center text-lg m-5">
+                    <div className="text-center text-base m-5">
                       {t("Achieve 10 points to get to level") +
                         " " +
                         (parseInt(level) + 1)}

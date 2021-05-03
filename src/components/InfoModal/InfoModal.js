@@ -26,17 +26,19 @@ const InfoModal = ({ setShowModal, level, t }) => {
             aria-modal="true"
             aria-labelledby="modal-headline"
           >
-            <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+            <div className="bg-gray-50 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
               <div className="sm:flex sm:items-start">
                 <ul>
                   <li>
                     <div className="text-center text-xl font-bold m-5">
-                      Info level {level}
+                      {t("Info Level") + " " + level}
                     </div>
                   </li>
                   <li>
                     <div className="text-center text-xl font-bold m-5">
-                      Achieve 10 point to get to level {parseInt(level) + 1}
+                      {t("Achieve 10 points to get to level") +
+                        " " +
+                        (parseInt(level) + 1)}
                     </div>
                   </li>
                   <li className="m-4">
@@ -45,7 +47,7 @@ const InfoModal = ({ setShowModal, level, t }) => {
                         <CityIcon />
                       </div>
                     </div>
-                    <span className="absolute p-2">Guess the CITY</span>
+                    <span className="absolute p-2">{t("Guess the city")}</span>
                   </li>
                   <li className="m-4">
                     <div className="inline-block rounded-lg bg-blue-500">
@@ -53,7 +55,9 @@ const InfoModal = ({ setShowModal, level, t }) => {
                         <CountryIcon />
                       </div>
                     </div>
-                    <span className="absolute p-2">Guess the COUNTRY</span>
+                    <span className="absolute p-2">
+                      {t("Guess the country")}
+                    </span>
                   </li>
                   <li className="m-4">
                     <div className="inline-block rounded-lg bg-pink-500">
@@ -61,7 +65,9 @@ const InfoModal = ({ setShowModal, level, t }) => {
                         <MonumentIcon />
                       </div>
                     </div>
-                    <span className="absolute p-2">Guess the MONUMENT</span>
+                    <span className="absolute p-2">
+                      {t("Guess the monument")}
+                    </span>
                   </li>
                 </ul>
               </div>

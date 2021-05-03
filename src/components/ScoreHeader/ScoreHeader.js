@@ -12,7 +12,7 @@ const ScoreHeader = ({ level, score, nextLevelExists, t }) => {
 
   return (
     <>
-      {nextLevelExists && score >= SCORE_TO_UNLOCK_LEVEL && (
+      {nextLevelExists && score >= SCORE_TO_UNLOCK_LEVEL ? (
         <div className="ml-6">
           <CTAButton
             text={t("Next level")}
@@ -22,6 +22,10 @@ const ScoreHeader = ({ level, score, nextLevelExists, t }) => {
             }}
           />
         </div>
+      ) : (
+        <span className="font-bold text-4xl m-4 text-gray-900">
+          {`${t("Level")} ${level}`}
+        </span>
       )}
       <span className="text-xl font-bold text-gray-600">{score} / 12</span>
     </>

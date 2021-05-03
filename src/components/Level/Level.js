@@ -107,9 +107,11 @@ const Level = ({ t }) => {
         <div className="px-4 sm:px-8 lg:px-16 xl:px-20 mx-auto">
           <div className="hero">
             <div className="hero-headline flex flex-col items-center justify-center pt-2 pb-2 text-center">
-              <span className="font-bold text-2xl text-gray-900">
-                {`${t("Level")} ${level}`}
-              </span>
+              {nextLevelExists && score >= SCORE_TO_UNLOCK_LEVEL ? (
+                <span className="font-bold text-4xl m-4 text-gray-900">
+                  {t("Level")} {level}
+                </span>
+              ) : null}
               <h1 className="sticky bg-gray-100 z-30 w-full py-4 score flex flex-row justify-between items-center px-2">
                 <span
                   className="cursor-pointer"

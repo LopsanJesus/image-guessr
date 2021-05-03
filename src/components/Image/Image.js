@@ -17,12 +17,7 @@ const getBorderColor = (type) => {
 };
 
 const cityNameToString = (imageName, t) => {
-  return t(
-    imageName
-      .split("-")
-      .join(" ")
-      .toUpperCase()
-  );
+  return t(imageName.split("-").join(" ").toUpperCase());
 };
 
 const Image = ({
@@ -41,7 +36,7 @@ const Image = ({
       onClick={() => onClick && onClick({ imageName, imageType })}
     >
       {showTypeInHeader && (
-        <h2 className="w-5/12 m-auto">
+        <h2 className="w-7/12 m-auto">
           <ImageTypeIcon
             imageType={imageType}
             isStored={isStored}

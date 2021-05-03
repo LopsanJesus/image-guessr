@@ -5,7 +5,7 @@ import CityIcon from "../../assets/CityIcon/CityIcon";
 import CountryIcon from "../../assets/CountryIcon/CountryIcon";
 import MonumentIcon from "../../assets/MonumentIcon/MonumentIcon";
 
-const InfoModal = ({ setShowModal, level, t }) => {
+const InfoModal = ({ onCloseInfoModal, level, t }) => {
   return (
     <div id="modal-guess">
       <div className="fixed z-30 inset-0 overflow-y-auto">
@@ -35,7 +35,7 @@ const InfoModal = ({ setShowModal, level, t }) => {
                     </div>
                   </li>
                   <li>
-                    <div className="text-center text-xl font-bold m-5">
+                    <div className="text-center text-lg m-5">
                       {t("Achieve 10 points to get to level") +
                         " " +
                         (parseInt(level) + 1)}
@@ -78,7 +78,7 @@ const InfoModal = ({ setShowModal, level, t }) => {
                 type="button"
                 className="xl:mb-3 mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
                 onClick={() => {
-                  setShowModal(false);
+                  onCloseInfoModal();
                 }}
               >
                 {t("Cancel")}

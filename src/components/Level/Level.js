@@ -19,11 +19,16 @@ import Footer from "../Footer";
 import Image from "../Image/Image";
 import InfoIcon from "../../assets/InfoIcon/InfoIcon";
 import InfoModal from "../InfoModal/InfoModal";
+import { useShowLevelInformationByDefault } from "../../hooks/useShowLevelInformationByDefault";
 
 const Level = ({ t }) => {
   const params = useParams();
   const [level, setLevel] = useState(params.level);
   const [scrollPosition, setScrollPosition] = useState(window.pageYOffset);
+  const {
+    showLevelInfoByDefault,
+    setLevelInfoSeen,
+  } = useShowLevelInformationByDefault(level);
 
   const [storedCities, setStoredCities] = useState(
     getStoredArray(CITIES_PREFIX + level)
@@ -55,6 +60,13 @@ const Level = ({ t }) => {
   const onGuessModalClose = () => {
     setShowModal(false);
     window.scrollTo(0, scrollPosition);
+  };
+
+  const onInfoModalClose = () => {
+    setShowInfoModal(false);
+    if (showLevelInfoByDefault) {
+      setLevelInfoSeen(level);
+    }
   };
 
   const addHit = () => {
@@ -140,8 +152,8 @@ const Level = ({ t }) => {
         <Footer />
       </div>
 
-      {showInfoModal && (
-        <InfoModal setShowModal={setShowInfoModal} level={level} />
+      {(showLevelInfoByDefault || showInfoModal) && (
+        <InfoModal onCloseInfoModal={onInfoModalClose} level={level} />
       )}
 
       {showModal && (

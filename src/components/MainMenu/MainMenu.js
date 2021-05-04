@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React /*, { useState }*/ from "react";
 import "./MainMenu.css";
 
 import LevelListItem from "../LevelListItem";
@@ -10,10 +10,10 @@ import _ from "lodash";
 import { withTranslation } from "react-i18next";
 import ShareButtons from "../ShareButtons/ShareButtons";
 import Footer from "../Footer";
-import ResetProgress from "../ResetProgress";
+// import ResetProgress from "../ResetProgress";
 
 const MainMenu = ({ t }) => {
-  const [showResetProgressModal, setShowResetProgressModal] = useState(false);
+  // const [showResetProgressModal, setShowResetProgressModal] = useState(false);
   const numberOfLevels = getNumberOfLevels();
   const lastLevelAchieved = getLastLevelAchieved();
   const hitsPerLevel = getHitsPerLevel();
@@ -47,22 +47,22 @@ const MainMenu = ({ t }) => {
             <div className="mt-5 mb-10">
               <ShareButtons />
             </div>
-            <button
+            {/* <button
               onClick={() => {
                 setShowResetProgressModal(false);
               }}
             >
               Boton
-            </button>
+            </button> */}
           </div>
         </div>
         <Footer />
       </div>
-      {showResetProgressModal && (
+      {/* {showResetProgressModal && (
         <div className="mt-5 mb-10">
           <ResetProgress />
         </div>
-      )}
+      )} */}
     </div>
   );
 };

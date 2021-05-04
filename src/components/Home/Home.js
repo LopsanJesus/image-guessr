@@ -20,7 +20,7 @@ const Home = ({ t }) => {
       <div className="cta-play-button">
         <Link
           to="/play"
-          className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-4 px-10 rounded-lg"
+          className="bg-secondary hover:bg-yellow-300 text-primary font-bold py-4 px-10 rounded-lg"
         >
           {t("Play")}
         </Link>

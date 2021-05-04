@@ -108,13 +108,13 @@ const Level = ({ t }) => {
           <div className="hero">
             <div className="hero-headline flex flex-col items-center justify-center pt-2 pb-2 text-center">
               {nextLevelExists && score >= SCORE_TO_UNLOCK_LEVEL ? (
-                <span className="font-bold text-4xl m-4 text-gray-900">
+                <span className="font-bold text-4xl m-4 text-white">
                   {t("Level")} {level}
                 </span>
               ) : null}
-              <h1 className="sticky bg-gray-100 z-30 w-full py-4 score flex flex-row justify-between items-center px-2">
+              <h1 className="sticky bg-primary z-30 w-full py-4 score flex flex-row justify-between items-center px-2">
                 <span
-                  className="cursor-pointer"
+                  className="cursor-pointer rounded-2xl bg-white"
                   onClick={handleInfoButtonClick}
                 >
                   <InfoIcon />

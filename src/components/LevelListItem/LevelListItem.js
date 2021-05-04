@@ -11,7 +11,7 @@ const LevelListItem = ({ level, hits, disabled, t }) => {
     <Link
       to={"/play/level/" + level}
       id={"level-" + level}
-      className={`block group p-4 border-b m-4 rounded-3xl relative
+      className={`block group p-4 m-4 rounded-3xl relative
       ${
         isLevelCompleted(hits)
           ? "bg-green-400 hover:bg-green-500 text-white group-hover:text-white"

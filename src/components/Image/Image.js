@@ -3,6 +3,8 @@ import ImageTypeIcon from "../ImageTypeIcon";
 import CheckIcon from "../../assets/CheckIcon/CheckIcon";
 import { withTranslation } from "react-i18next";
 
+import "./styles.css";
+
 const getBorderColor = (type) => {
   switch (type) {
     case "city":
@@ -55,7 +57,7 @@ const Image = ({
         src={"/img/" + imageName + ".jpg"}
         width="500"
         height="600"
-        className={`image max-h-96 ${
+        className={`image imageClass ${
           !isStored
             ? showTypeInHeader
               ? getBorderColor(imageType)

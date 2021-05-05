@@ -1,0 +1,8 @@
+.imageClass {
+  max-height: 336px;
+}
+@media (max-width: 420px) {
+  .imageClass {
+    max-height: 261px;
+  }
+}

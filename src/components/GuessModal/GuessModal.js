@@ -67,7 +67,7 @@ const GuessModal = ({
             &#8203;
           </span>
           <div
-            className="inline-block bg-gray-50 align-bottom bg-gray-50 rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-3xl sm:w-full"
+            className="inline-block align-bottom bg-primary rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-3xl sm:w-full"
             role="dialog"
             aria-modal="true"
             aria-labelledby="modal-headline"

@@ -30,8 +30,6 @@ const Image = ({
   t,
   showTypeInHeader,
 }) => {
-  console.log(imageName);
-
   return (
     <div
       className="image-container relative inline-block text-center cursor-pointer"

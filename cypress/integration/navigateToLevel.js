@@ -2,7 +2,7 @@ describe("navigateToLevel", () => {
   it("User can navigate to a level", () => {
     cy.visit("/");
 
-    cy.get(".cta-play-button").contains("PLAY").click();
+    cy.get(".cta-play-button").click();
 
     cy.url().should("eq", "http://localhost:3000/play");
 
@@ -10,6 +10,6 @@ describe("navigateToLevel", () => {
 
     cy.get("#close-modal-button").click();
 
-    cy.contains("Level 1");
+    cy.contains("Nivel 1");
   });
 });

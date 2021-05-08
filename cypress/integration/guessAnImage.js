@@ -1,5 +1,5 @@
 describe("guessAnImage", () => {
-  const cityName = "Cordoba";
+  const cityName = "Córdoba";
 
   it("user can click an image and type a word", () => {
     cy.visit("/play/level/1");
@@ -10,7 +10,7 @@ describe("guessAnImage", () => {
 
     cy.get("input").type(cityName);
 
-    cy.get("button").contains("Check").click();
+    cy.get("button#check-modal-button").click();
 
     cy.contains("1 / 12");
 

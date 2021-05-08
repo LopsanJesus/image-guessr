@@ -1,1 +1,1 @@
-export { default } from './GuessModal';
+export { default } from "./InfoModal";

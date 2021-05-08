@@ -20,6 +20,8 @@ import Image from "../Image/Image";
 import InfoIcon from "../../assets/InfoIcon/InfoIcon";
 import InfoModal from "../InfoModal/InfoModal";
 import { useShowLevelInformationByDefault } from "../../hooks/useShowLevelInformationByDefault";
+import { useShowLastLevelInfo } from "../../hooks/useShowLastLevelInfo";
+import LastLevelInfoModal from "../LastLevelInfoModal";
 
 const Level = ({ t }) => {
   const params = useParams();
@@ -34,6 +36,10 @@ const Level = ({ t }) => {
     getStoredArray(CITIES_PREFIX + level)
   );
   const [score, setScore] = useState(storedCities.length);
+  const { showLastLevelInfo, setShowLastLevelInfo } = useShowLastLevelInfo(
+    level,
+    score
+  );
 
   useEffect(() => {
     if (params.level !== level) {
@@ -154,6 +160,10 @@ const Level = ({ t }) => {
 
       {(showLevelInfoByDefault || showInfoModal) && (
         <InfoModal onCloseInfoModal={onInfoModalClose} level={level} />
+      )}
+
+      {showLastLevelInfo && (
+        <LastLevelInfoModal onClose={() => setShowLastLevelInfo(level)} />
       )}
 
       {showModal && (

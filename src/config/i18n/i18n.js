@@ -15,16 +15,16 @@ i18n
     },
     order: [
       "navigator",
+      "htmlTag",
       "querystring",
-      "cookie",
       "localStorage",
       "sessionStorage",
       "path",
       "subdomain",
-      "htmlTag",
+      "cookie",
     ],
 
-    supportedLngs: ["en", "es"],
+    supportedLngs: ["es", "en"],
     fallbackLng: "es",
     keySeparator: false, // we do not use keys in form messages.welcome
 

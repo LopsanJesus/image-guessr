@@ -13,6 +13,16 @@ i18n
       en: en,
       es: es,
     },
+    order: [
+      "navigator",
+      "querystring",
+      "cookie",
+      "localStorage",
+      "sessionStorage",
+      "path",
+      "subdomain",
+      "htmlTag",
+    ],
 
     supportedLngs: ["en", "es"],
     fallbackLng: "es",

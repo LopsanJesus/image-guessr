@@ -20,7 +20,7 @@ const LastLevelInfoModal = ({ t, onClose }) => {
             &#8203;
           </span>
           <div
-            className="w-9/12 bg-primary text-white inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all"
+            className="w-11/12 bg-primary text-white inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all"
             role="dialog"
             aria-modal="true"
             aria-labelledby="modal-headline"
@@ -33,9 +33,6 @@ const LastLevelInfoModal = ({ t, onClose }) => {
                 <span className="font-custom block text-secondary text-4xl text-center font-medium p-2">
                   ImageGuessr
                 </span>
-                <div className="text-center text-2xl m-5">
-                  <span>{t("Congratulations!")}</span>
-                </div>
                 <div className="text-center text-xl m-3 mb-7">
                   <span>{t("Last level completed!")}</span>
                 </div>

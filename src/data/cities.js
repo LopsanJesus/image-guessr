@@ -153,6 +153,7 @@ const images = [
     },
   ],
   [
+    { image: "italia", type: "country", translations: ["italia", "italy"] },
     { image: "dubrovnik", type: "city", translations: ["dubrovnik"] },
     {
       image: "cadiz",
@@ -192,7 +193,6 @@ const images = [
       type: "country",
       translations: ["france", "francia", "la france"],
     },
-    { image: "italia", type: "country", translations: ["italia", "italy"] },
     {
       image: "panama-canal",
       type: "monument",
@@ -300,9 +300,9 @@ const images = [
     },
     { image: "kiev", type: "city", translations: ["kiev"] },
     {
-      image: "ulaanbaatar",
-      type: "city",
-      translations: ["ulaanbaatar", "ulan bator", "ulán bator"],
+      image: "mongolia",
+      type: "country",
+      translations: ["mongolia"],
     },
     { image: "dubai", type: "city", translations: ["dubai", "dubái"] },
     { image: "chicago", type: "city", translations: ["chicago"] },
@@ -313,7 +313,7 @@ const images = [
     },
     {
       image: "chernobyl",
-      type: "monument",
+      type: "city",
       translations: ["chernobyl", "chernobil", "chernóbil"],
     },
     {

@@ -3,7 +3,17 @@
     publish = "/build"
     base = "/"
 
+
+
 [[redirects]]
-    from = "/*"
-    to = "/index.html"
-    status = 200 
+  from = "/*"
+  to = "/?lang=es"
+  status = 302
+  conditions = {Country = ["ES"]}
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/?lang=en"
+  status = 302
+  force = true

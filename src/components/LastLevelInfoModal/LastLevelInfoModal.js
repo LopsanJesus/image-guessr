@@ -27,9 +27,12 @@ const LastLevelInfoModal = ({ t, onClose }) => {
           >
             <div className="px-4 pt-20 sm:p-6 sm:pb-4">
               <div>
-                <div className="m-7 flex justify-center">
+                <div className="m-5 flex justify-center">
                   <CityBadge />
                 </div>
+                <span className="font-custom block text-secondary text-4xl text-center font-medium p-2">
+                  ImageGuessr
+                </span>
                 <div className="text-center text-2xl m-5">
                   <span>{t("Congratulations!")}</span>
                 </div>

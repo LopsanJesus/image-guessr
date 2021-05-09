@@ -40,3 +40,9 @@ export const getStoredArray = (key) => {
   }
   return [];
 };
+
+export const clearStorage = () => {
+  let i18nextLng = getStoredItem("i18nextLng");
+  localStorage.clear();
+  storeItem(i18nextLng, "i18nextLng");
+};

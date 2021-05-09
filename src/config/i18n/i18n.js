@@ -13,8 +13,18 @@ i18n
       en: en,
       es: es,
     },
+    order: [
+      "navigator",
+      "htmlTag",
+      "querystring",
+      "localStorage",
+      "sessionStorage",
+      "path",
+      "subdomain",
+      "cookie",
+    ],
 
-    supportedLngs: ["en", "es"],
+    supportedLngs: ["es", "en"],
     fallbackLng: "es",
     keySeparator: false, // we do not use keys in form messages.welcome
 

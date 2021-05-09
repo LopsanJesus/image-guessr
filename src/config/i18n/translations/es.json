@@ -1,10 +1,8 @@
 {
   "translation": {
     "ImageGuessr": "ImageGuessr",
-    "Guess each city": "Adivina cada ciudad",
     "Levels": "Niveles",
     "Level": "Nivel",
-    "Score": "Puntos",
     "More levels coming soon...": "Más niveles próximamente...",
     "Achieve 10 points to unlock level": "Consigue 10 puntos para alcanzar el nivel",
     "You unlocked level": "Has desbloqueado el nivel ",
@@ -15,6 +13,23 @@
     "No images were found": "Hmm... No encontré ninguna imagen 🤔",
     "Play with your friends": "Reta a tus amigos!",
     "Link copied to clipboard": "Link copiado al portapapeles",
+    "Next level": "Siguiente nivel",
+
+    "Info Level": "Información nivel",
+    "Achieve 10 points to get to level": "Consigue 10 puntos para pasar al nivel",
+    "New type of images unlocked!": "¡Nuevos tipos de imágenes desbloqueados!",
+    "Guess the city": "Adivina la CIUDAD",
+    "Guess the country": "Adivina el PAÍS",
+    "Guess the monument": "Adivina el MONUMENTO",
+
+    "Congratulations!": "¡Enhorabuena!",
+    "Last level completed!": "¡Has completado el último nivel!",
+
+    "Info": "Información",
+
+    "city": "Ciudad",
+    "country": "País",
+    "monument": "Monumento",
 
     "Play": "JUGAR",
 
@@ -68,6 +83,45 @@
     "HONG KONG": "Hong Kong",
     "ISTANBUL": "Estambul",
     "LISBON": "Lisboa",
-    "MARRAKESH": "Marrakech"
+    "MARRAKESH": "Marrakech",
+
+    "DUBROVNIK": "Dubrovnik",
+    "CADIZ": "Cádiz",
+    "THAILAND": "Tailandia",
+    "MOUNT RUSHMORE": "Monte Rushmore",
+    "KYOTO": "Kioto",
+    "PALMAR TROYA": "El Palmar de Troya",
+    "POLAND": "Polonia",
+    "FRANCE": "Francia",
+    "ITALIA": "Italia",
+    "PANAMA CANAL": "Canal de Panamá",
+    "CAPE TOWN": "Ciudad del Cabo",
+    "IRAQ": "Irak",
+
+    "BOLIVIA": "Bolivia",
+    "AQUEDUCT OF SEGOVIA": "Acueducto de Segovia",
+    "SPAIN": "España",
+    "NEPAL": "Nepal",
+    "SACRE COEUR": "Sacré Cœur",
+    "PYONGYANG": "Pyongyang",
+    "SINGAPORE": "Singapur",
+    "EASTER ISLAND": "Moais de la Isla de Pascua",
+    "MEDELLIN": "Medellín",
+    "CHINA": "China",
+    "ALLIANZ ARENA": "Allianz Arena",
+    "GIBRALTAR": "Gibraltar",
+
+    "BELEM TOWER": "Torre de Belém",
+    "KIEV": "Kiev",
+    "MONGOLIA": "Mongolia",
+    "DUBAI": "Dubái",
+    "CHICAGO": "Chicago",
+    "DALLAS": "Dallas",
+    "CHERNOBYL": "Chernóbil",
+    "KENYA": "Kenia",
+    "SHANGHAI": "Shanghái",
+    "SAINT PETERS SQUARE": "Plaza de San Pedro",
+    "NETHERLANDS": "Países Bajos",
+    "VALPARAISO": "Valparaíso"
   }
 }

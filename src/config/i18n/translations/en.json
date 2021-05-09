@@ -1,10 +1,8 @@
 {
   "translation": {
     "ImageGuessr": "ImageGuessr",
-    "Guess each city": "Guess each city",
     "Levels": "Levels",
     "Level": "Level",
-    "Score": "Score",
     "More levels coming soon...": "More levels coming soon...",
     "Achieve 10 points to unlock level": "Achieve 10 points to unlock level",
     "You unlocked level": "You unlocked level ",
@@ -15,6 +13,23 @@
     "No images were found": "No images were found",
     "Play with your friends": "Play with your friends!",
     "Link copied to clipboard": "Link copied to clipboard",
+    "Next level": "Next level",
+
+    "Info Level": "Info level",
+    "Achieve 10 points to get to level": "Achieve 10 points to get to level",
+    "New type of images unlocked!": "New type of images unlocked!",
+    "Guess the city": "Guess the CITY",
+    "Guess the country": "Guess the COUNTRY",
+    "Guess the monument": "Guess the MONUMENT",
+
+    "Congratulations!": "Congratulations!",
+    "Last level completed!": "Last level completed!",
+
+    "Info": "Info",
+
+    "city": "City",
+    "country": "Country",
+    "monument": "Monument",
 
     "Play": "PLAY",
 
@@ -68,6 +83,45 @@
     "HONG KONG": "Hong Kong",
     "ISTANBUL": "Istanbul",
     "LISBON": "Lisbon",
-    "MARRAKESH": "Marrakesh"
+    "MARRAKESH": "Marrakesh",
+
+    "DUBROVNIK": "Dubrovnik",
+    "CADIZ": "Cadiz",
+    "THAILAND": "Thailand",
+    "MOUNT RUSHMORE": "Mount Rushmore",
+    "KYOTO": "Kyoto",
+    "PALMAR TROYA": "Palmar de Troya",
+    "POLAND": "Poland",
+    "FRANCE": "France",
+    "ITALIA": "Italia",
+    "PANAMA CANAL": "Panama Canal",
+    "CAPE TOWN": "Cape Town",
+    "IRAQ": "Iraq",
+
+    "BOLIVIA": "Bolivia",
+    "AQUEDUCT OF SEGOVIA": "Aqueduct of Segovia",
+    "SPAIN": "Spain",
+    "NEPAL": "Nepal",
+    "SACRE COEUR": "Sacre Cœur",
+    "PYONGYANG": "Pyongyang",
+    "SINGAPORE": "Singapore",
+    "EASTER ISLAND": "Easter Island",
+    "MEDELLIN": "Medellin",
+    "CHINA": "China",
+    "ALLIANZ ARENA": "Allianz Arena",
+    "GIBRALTAR": "Gibraltar",
+
+    "BELEM TOWER": "Belem Tower",
+    "KIEV": "Kiev",
+    "MONGOLIA": "Mongolia",
+    "DUBAI": "Dubai",
+    "CHICAGO": "Chicago",
+    "DALLAS": "Dallas",
+    "CHERNOBYL": "Chernobyl",
+    "KENYA": "Kenya",
+    "SHANGHAI": "Shanghai",
+    "SAINT PETERS SQUARE": "Saint Peter's Square",
+    "NETHERLANDS": "Netherlands",
+    "VALPARAISO": "Valparaiso"
   }
 }

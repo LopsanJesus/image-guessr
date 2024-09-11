@@ -40,7 +40,7 @@ const GuessModal = ({
 
   const checkGuess = () => {
     if (
-      getImageTranslations(level, imageName).includes(
+      getImageTranslations(imageName).includes(
         modalInput.current.value.trim().toLowerCase()
       )
     ) {
